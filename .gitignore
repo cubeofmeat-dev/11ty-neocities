@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# 11ty output
+_site/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional: package manager lock files (uncomment if you prefer)
+# package-lock.json
+# yarn.lock
+
