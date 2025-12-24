@@ -1,0 +1,25 @@
+{
+  "name": "11ty-neocities",
+  "version": "1.0.0",
+  "description": "A personal website built with [Eleventy (11ty)](https://www.11ty.dev/) for hosting on [Neocities](https://neocities.org/).",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cubeofmeat-dev/11ty-neocities.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cubeofmeat-dev/11ty-neocities/issues"
+  },
+  "homepage": "https://github.com/cubeofmeat-dev/11ty-neocities#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
