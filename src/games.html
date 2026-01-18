@@ -1,0 +1,21 @@
+---
+layout: games-layout.html
+title: Games Archive
+---
+
+<div class="container">
+  <label class="title">Games Archive</label>
+  <p>Monthly game reviews and thoughts.</p>
+
+  <div class="button-group">
+    {%- for post in collections.games | reverse -%}
+    <button
+      type="button"
+      class="btn"
+      onclick="window.location.href='{{ post.url }}'"
+    >
+      {{ post.data.title }}
+    </button>
+    {%- endfor -%}
+  </div>
+</div>
