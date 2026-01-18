@@ -58,9 +58,9 @@ So the thing I noticed right away for the 3rd installment, is it felt a little m
 
 Overall, Im happy with 3. You can really se the series is starting to get that blockbuster feel to it, and the devs and writers are putting more effort into the characters instead of just soldiers of fortune. The interactions feel real, and help immerse you into the game. Pretty much the only negative thing I can say about this game is because it is stuck on the 360, performance is absolutely abysmal at times, really making me wish I had another way to play. Outside of that, an enjoyable experience, I would boot up again in the future to play through some of those missions.
 
-\*\*B
+**B**
 
-##Call of Duty: World at War
+## Call of Duty: World at War
 
 Back again with Treyarch. Now Call of Duty has made kind of a huge name for itself with the success of Modern Warfare. A WW2 game was natural at this point, and people weren’t too upset with no modern combat for the 2009 release. This time, war was brutal, showing a different side of story telling, and the first time seeing the stories of the US in the pacific theater in a CoD campaign.
 
