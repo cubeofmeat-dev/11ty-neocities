@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
         // Replace h2 with label.title
         const formatted = section.replace(
           /<h2>(.*?)<\/h2>/gi,
-          '<label class="title">$1</label>'
+          '<h2 class="title">$1</h2>'
         );
         return `<div class="container">${formatted}</div>`;
       })
