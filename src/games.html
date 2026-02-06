@@ -12,15 +12,22 @@ title: Games Archive
     archive below!
   </p>
 
-  <div class="button-group">
-    {%- for post in collections.games | reverse -%}
-    <button
-      type="button"
-      class="btn"
-      onclick="window.location.href='{{ post.url }}'"
-    >
-      {{ post.data.title }}
-    </button>
-    {%- endfor -%}
-  </div>
+  <p>
+    {% assign postsByYear = collections.games | group_by: "data.year" %} {% for
+    eachYear in postsByYear %}
+    <h2 class="title">{{ eachYear.name }}</h2>
+    <div class="button-group">
+      {%- assign sortedPosts = eachYear.items | sort: "data.month" -%} {%- for
+      post in sortedPosts -%}
+      <button
+        type="button"
+        class="btn"
+        onclick="window.location.href='{{ post.url }}'"
+      >
+        {{ post.data.title }}
+      </button>
+      {%- endfor -%}
+    </div>
+    {% endfor %}
+  </p>
 </div>
