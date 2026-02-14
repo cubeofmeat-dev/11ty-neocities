@@ -6,8 +6,8 @@ title: Games Archive
 
 
 <body class="main-container">
-  <a href="/index.html">Go Back</a>
-  <div class="snes-container has-aged-yellow-bg" style="margin: 3rem;">
+  <a href="/" id="back-button" class="snes-button has-plumber-color">X</a>
+  <div class="snes-container has-aged-yellow-bg">
     <h1 class="snes-container-title has-plumber-underline">Games Archive</h1>
     <p>Hello, I am CubeOfMeat. I like gaming.</p>
     <p>
@@ -18,7 +18,7 @@ title: Games Archive
       {% assign postsByYear = collections.games | group_by: "data.year" %} {% for
       eachYear in postsByYear %}
     <h2 class="snes-container-title">{{ eachYear.name }}</h2>
-    <div class="item-grid">
+    <div id="buttons" class="item-grid">
       {%- assign sortedPosts = eachYear.items | sort: "data.month" -%}
       {%- assign colors =
       "has-plumber-color,has-nature-color,has-sunshine-color,has-ocean-color,has-turquoise-color,has-phantom-color,has-rose-color,has-galaxy-color,has-ember-color"

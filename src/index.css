@@ -2,6 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
+  margin-top: 3rem;
 }
 
 .item-grid {
@@ -12,4 +13,26 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 40px;
+}
+
+#buttons .snes-button {
+  width: 200px;
+}
+
+#back-button {
+  float: right;
+  position: relative;
+  z-index: 10;
+}
+
+
+
+@media (max-width: 520px) {
+  #buttons .snes-button {
+    width: 100%;
+  }
+
+  #back-button {
+    display: none;
+  }
 }
