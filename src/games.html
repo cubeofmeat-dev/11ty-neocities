@@ -3,31 +3,34 @@ layout: games-layout.html
 title: Games Archive
 ---
 
-<a href="/index.html">Go Back</a>
-<div class="container">
-  <h2 class="title">Games Archive</h2>
-  <p>Hello, I am CubeOfMeat. I like gaming.</p>
-  <p>
-    This is a collection of games I am playing over the years. Checkout the
-    archive below!
-  </p>
 
-  <p>
-    {% assign postsByYear = collections.games | group_by: "data.year" %} {% for
-    eachYear in postsByYear %}
-    <h2 class="title">{{ eachYear.name }}</h2>
-    <div class="button-group">
-      {%- assign sortedPosts = eachYear.items | sort: "data.month" -%} {%- for
-      post in sortedPosts -%}
-      <button
-        type="button"
-        class="btn"
-        onclick="window.location.href='{{ post.url }}'"
-      >
+
+<body class="main-container">
+  <a href="/index.html">Go Back</a>
+  <div class="snes-container has-aged-yellow-bg" style="margin: 3rem;">
+    <h1 class="snes-container-title has-plumber-underline">Games Archive</h1>
+    <p>Hello, I am CubeOfMeat. I like gaming.</p>
+    <p>
+      This is a collection of games I am playing over the years. Checkout the
+      archive below!
+    </p>
+    <p>
+      {% assign postsByYear = collections.games | group_by: "data.year" %} {% for
+      eachYear in postsByYear %}
+    <h2 class="snes-container-title">{{ eachYear.name }}</h2>
+    <div class="item-grid">
+      {%- assign sortedPosts = eachYear.items | sort: "data.month" -%}
+      {%- assign colors =
+      "has-plumber-color,has-nature-color,has-sunshine-color,has-ocean-color,has-turquoise-color,has-phantom-color,has-rose-color,has-galaxy-color,has-ember-color"
+      | split: "," -%}
+      {%- for post in sortedPosts -%}
+      {%- assign colorIndex = forloop.index0 | modulo: colors.size -%}
+      <button class="snes-button {{ colors[colorIndex] }}" onclick="window.location.href='{{ post.url }}'">
         {{ post.data.title }}
       </button>
       {%- endfor -%}
     </div>
     {% endfor %}
-  </p>
-</div>
+    </p>
+  </div>
+</body>

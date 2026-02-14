@@ -2,24 +2,32 @@ module.exports = function (eleventyConfig) {
   // Copy CSS file to output
   eleventyConfig.addPassthroughCopy("src/index.css");
 
-  // Filter to wrap each h2 section in its own container
+  // Filter to give h1s snes class with cycling colors
   eleventyConfig.addFilter("gameFormat", function (content) {
-    if (!content) return "";
+    const colors = [
+      "has-plumber-underline",
+      "has-nature-underline",
+      "has-sunshine-underline",
+      "has-ocean-underline",
+      "has-turquoise-underline",
+      "has-phantom-underline",
+      "has-rose-underline",
+      "has-galaxy-underline",
+      "has-ember-underline",
+    ];
+    let colorIndex = 0;
 
-    // Split content by h2 tags, keeping the h2s
-    const sections = content.split(/(?=<h2>)/gi);
+    // Replace h1 tags with classes and cycle through colors
+    let formatted = content.replace(
+      /<h1>(.*?)<\/h1>/gi,
+      (_, title) => {
+        const color = colors[colorIndex % colors.length];
+        colorIndex++;
+        return `<h1 class="snes-container-title ${color}">${title}</h1>`;
+      },
+    );
 
-    return sections
-      .filter((s) => s.trim())
-      .map((section) => {
-        // Replace h2 with label.title
-        const formatted = section.replace(
-          /<h2>(.*?)<\/h2>/gi,
-          '<h2 class="title">$1</h2>',
-        );
-        return `<div class="container">${formatted}</div>`;
-      })
-      .join("\n");
+    return formatted;
   });
 
   return {

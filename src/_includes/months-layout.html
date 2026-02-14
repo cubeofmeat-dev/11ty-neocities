@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
-    <link rel="icon" type="image/x-icon" href="/resources/cubeofmeat.png" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/98mprice/PSone.css@master/PSone.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="/index.css" />
-  </head>
 
-  <body>
-    <a href="/games">Go Back</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/x-icon" href="/resources/cubeofmeat.png" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/snes.css@1.0.1/dist/snes.min.css" />
+  <link rel="stylesheet" type="text/css" href="/index.css" />
+</head>
+
+<body class="main-container">
+  <a href="/games">Go Back</a>
+  <div class="snes-container has-aged-yellow-bg" style="margin: 3rem;">
+
     {{ content | gameFormat }}
-  </body>
+  </div>
+</body>
+
 </html>
