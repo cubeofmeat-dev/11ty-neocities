@@ -2,6 +2,7 @@
 title: Da Rules
 layout: months-layout.html
 tags: games
+eleventyExcludeFromCollections: true
 ---
 
 # What is my rating scale?
