@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
   // Copy CSS file to output
   eleventyConfig.addPassthroughCopy("src/index.css");
+  eleventyConfig.addPassthroughCopy("src/images");
 
   // Filter to give h1s snes class with cycling colors
   eleventyConfig.addFilter("gameFormat", function (content) {
