@@ -1,0 +1,26 @@
+# Copilot Rule: Image Insertion in Markdown
+
+Whenever I request to add an image to a Markdown (.md) file, always use the following HTML snippet format:
+
+<p>
+    <img class="img-<choiceFromPrompt> snes-container no-padding" src="/images/<fileNameIGiveYou>">
+</p>
+
+Where:
+- `<choiceFromPrompt>` is either `logo` or `game`, as specified in my prompt.
+- `<fileNameIGiveYou>` is the image filename I provide as the source path.
+
+Do not use Markdown image syntax (`![]()`), always use the HTML snippet above.
+
+Example:
+If I say: "Add a logo image wolfensteinNewOrder-logo.png", you should insert:
+
+<p>
+    <img class="img-logo snes-container no-padding" src="/images/wolfensteinNewOrder-logo.png">
+</p>
+
+If I say: "Add a game image doom-img1.jpg", you should insert:
+
+<p>
+    <img class="img-game snes-container no-padding" src="/images/doom-img1.jpg">
+</p>
