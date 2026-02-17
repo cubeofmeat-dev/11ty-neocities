@@ -13,11 +13,13 @@ F - Horrible game, turned off before even beating
 
 D - Bad game, potentially would not play all the way through
 
-C - Middle of the road, either frustrating or not worth replaying
+C - Average middle of the road game, either frustrating or not worth replaying
 
-B - Great game worth experiencing, good replayability, but not something you would play often
+B - Good game worth experiencing, would replay, but not something you would replay often
 
-A - Masterpiece, worth replaying often, fun, otherwise perfect experience
+A - Great game, worth replaying
+
+S - Masterpiece, one of a kind experience
 
 
 # Examples:
