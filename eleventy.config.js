@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig) {
       },
     );
 
+    //todo figure out map so that way I can map rating of title from h2s to color instead of just cycling through them
     colorIndex = 0; // Reset color index for h2 tags
     formatted = formatted.replace(
       /<h2>(.*?)<\/h2>/gi,
