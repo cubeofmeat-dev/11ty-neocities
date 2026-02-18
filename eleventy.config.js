@@ -28,6 +28,16 @@ module.exports = function (eleventyConfig) {
       },
     );
 
+    colorIndex = 0; // Reset color index for h2 tags
+    formatted = formatted.replace(
+      /<h2>(.*?)<\/h2>/gi,
+      (_, title) => {
+        const color = colors[colorIndex % colors.length];
+        colorIndex++;
+        return `<h2 class="snes-container-title ${color}">${title}</h2>`;
+      },
+    );
+
     return formatted;
   });
 
