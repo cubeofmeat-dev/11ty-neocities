@@ -5,36 +5,32 @@ module.exports = function (eleventyConfig) {
 
   // Filter to give h1s snes class with cycling colors
   eleventyConfig.addFilter("gameFormat", function (content) {
-    const colors = [
-      "has-plumber-underline",
-      "has-nature-underline",
-      "has-sunshine-underline",
-      "has-ocean-underline",
-      "has-turquoise-underline",
-      "has-phantom-underline",
-      "has-rose-underline",
-      "has-galaxy-underline",
-      "has-ember-underline",
-    ];
-    let colorIndex = 0;
+    const colorMap = new Map();
+    colorMap.set("F", "has-plumber-underline");
+    colorMap.set("B", "has-nature-underline");
+    colorMap.set("S", "has-sunshine-underline");
+    colorMap.set("A", "has-ocean-underline");
+    colorMap.set("C", "has-turquoise-underline");
+    colorMap.set("2", "has-phantom-underline");
+    colorMap.set("3", "has-rose-underline");
+    colorMap.set("1", "has-galaxy-underline");
+    colorMap.set("D", "has-ember-underline");
 
     // Replace h1 tags with classes and cycle through colors
+    let colorIndex = 0;
     let formatted = content.replace(
       /<h1>(.*?)<\/h1>/gi,
       (_, title) => {
-        const color = colors[colorIndex % colors.length];
+        const color = Array.from(colorMap.values())[colorIndex % colorMap.size];
         colorIndex++;
         return `<h1 class="snes-container-title ${color}">${title}</h1>`;
       },
     );
 
-    //todo figure out map so that way I can map rating of title from h2s to color instead of just cycling through them
-    colorIndex = 0; // Reset color index for h2 tags
     formatted = formatted.replace(
       /<h2>(.*?)<\/h2>/gi,
       (_, title) => {
-        const color = colors[colorIndex % colors.length];
-        colorIndex++;
+        const color = colorMap.get(title.trim()[0]);
         return `<h2 class="snes-container-title ${color}">${title}</h2>`;
       },
     );
