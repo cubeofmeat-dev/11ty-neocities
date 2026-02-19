@@ -16,6 +16,17 @@ module.exports = function (eleventyConfig) {
     colorMap.set("1", "has-galaxy-underline");
     colorMap.set("D", "has-ember-underline");
 
+    const ratingMap = new Map();
+    ratingMap.set("F", "text-plumber-color");
+    ratingMap.set("B", "text-nature-color");
+    ratingMap.set("S", "text-sunshine-color");
+    ratingMap.set("A", "text-ocean-color");
+    ratingMap.set("C", "text-turquoise-color");
+    ratingMap.set("2", "text-phantom-color");
+    ratingMap.set("3", "text-rose-color");
+    ratingMap.set("1", "text-galaxy-color");
+    ratingMap.set("D", "text-ember-color");
+
     // Replace h1 tags with classes and cycle through colors
     let colorIndex = 0;
     let formatted = content.replace(
@@ -30,8 +41,8 @@ module.exports = function (eleventyConfig) {
     formatted = formatted.replace(
       /<h2>(.*?)<\/h2>/gi,
       (_, title) => {
-        const color = colorMap.get(title.trim()[0]);
-        return `<h2 class="snes-container-title ${color}">${title}</h2>`;
+        const color = ratingMap.get(title.trim()[0]);
+        return `<h2 class="${color}">${title}</h2>`;
       },
     );
 
