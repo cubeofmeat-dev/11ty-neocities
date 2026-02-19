@@ -18,14 +18,16 @@ module.exports = function (eleventyConfig) {
 
     const ratingMap = new Map();
     ratingMap.set("F", "text-plumber-color");
-    ratingMap.set("B", "text-nature-color");
-    ratingMap.set("S", "text-sunshine-color");
-    ratingMap.set("A", "text-ocean-color");
+    ratingMap.set("D", "text-ember-color");
     ratingMap.set("C", "text-turquoise-color");
+    ratingMap.set("B", "text-nature-color");
+    ratingMap.set("A", "text-ocean-color");
+    ratingMap.set("S", "text-sunshine-color");
+
     ratingMap.set("2", "text-phantom-color");
     ratingMap.set("3", "text-rose-color");
     ratingMap.set("1", "text-galaxy-color");
-    ratingMap.set("D", "text-ember-color");
+
 
     // Replace h1 tags with classes and cycle through colors
     let colorIndex = 0;
