@@ -1,0 +1,36 @@
+---
+layout: manga-layout.html
+title: Manga Archive
+---
+
+
+
+<body class="main-container">
+    <a href="/" id="back-button" class="snes-button has-plumber-color">X</a>
+    <div class="snes-container has-aged-yellow-bg">
+        <h1 class="snes-container-title has-plumber-underline">Games Archive</h1>
+        <p>Hello, I am CubeOfMeat. I like manga.</p>
+        <p>
+            I have always been into manga, and this is to collect my thoughts on them as I finish. Checkout the archive
+            below!
+        </p>
+        <p>
+            {% assign postsByYear = collections.manga | group_by: "data.year" %} {% for
+            eachYear in postsByYear %}
+        <h2 class="snes-container-title">{{ eachYear.name }}</h2>
+        <div id="buttons" class="item-grid">
+            {%- assign sortedPosts = eachYear.items | sort: "data.month" -%}
+            {%- assign colors =
+            "has-plumber-color,has-nature-color,has-sunshine-color,has-ocean-color,has-turquoise-color,has-phantom-color,has-rose-color,has-galaxy-color,has-ember-color"
+            | split: "," -%}
+            {%- for post in sortedPosts -%}
+            {%- assign colorIndex = forloop.index0 | modulo: colors.size -%}
+            <button class="snes-button {{ colors[colorIndex] }}" onclick="window.location.href='{{ post.url }}'">
+                {{ post.data.title }}
+            </button>
+            {%- endfor -%}
+        </div>
+        {% endfor %}
+        </p>
+    </div>
+</body>
