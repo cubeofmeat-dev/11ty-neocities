@@ -20,7 +20,7 @@ title: Games Archive
       archive.
     </p>
     <p>
-      {% assign postsByYear = collections.games | group_by: "data.year" %} {% for
+      {% assign postsByYear = collections.games | group_by: "data.year" | reverse %} {% for
       eachYear in postsByYear %}
     <h2 class="snes-container-title">{{ eachYear.name }}</h2>
     <div id="buttons" class="item-grid">
