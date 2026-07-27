@@ -7,14 +7,14 @@ eleventyExcludeFromCollections: true
 
 _quote-from-game_
 
-## First Impression
+### First Impression
 
-## Story
+### Story
 
-## Look & Feel
+### Look & Feel
 
-## Sound & Music
+### Sound & Music
 
-## Fun Factor
+### Fun Factor
 
-## Overall
+### Overall
