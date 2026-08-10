@@ -88,7 +88,7 @@ eleventyExcludeFromCollections: true
     {%- for post in sortedPosts -%}
       {%- if post.data.ratings -%}
         {%- for entry in post.data.ratings -%}
-          { x: {{ monthIndex }}, game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: "{{ post.data.title }} {{ post.data.year }}" },
+          { x: {{ monthIndex }}, game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: "{{ post.data.month }}/{{ post.data.year }}" },
         {%- endfor -%}
         {%- assign monthIndex = monthIndex | plus: 1 -%}
       {%- endif -%}
@@ -99,7 +99,7 @@ eleventyExcludeFromCollections: true
   const monthLabels = [
     {%- for post in sortedPosts -%}
       {%- if post.data.ratings -%}
-        "{{ post.data.title }} {{ post.data.year }}",
+        "{{ post.data.month }}/{{ post.data.year }}",
       {%- endif -%}
     {%- endfor -%}
   ];
