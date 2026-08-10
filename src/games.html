@@ -34,7 +34,7 @@ title: Games Archive
       {%- for post in sortedPosts -%}
       {%- assign colorIndex = forloop.index0 | modulo: colors.size -%}
       <button class="snes-button {{ colors[colorIndex] }}" onclick="window.location.href='{{ post.url }}'">
-        {{ post.data.title }}
+        {{ post.data.monthText }}
       </button>
       {%- endfor -%}
     </div>
