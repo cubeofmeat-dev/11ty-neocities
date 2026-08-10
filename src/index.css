@@ -68,6 +68,14 @@ img.img-logo {
   flex-wrap: wrap;
 }
 
+#font-toggle {
+  text-decoration: none;
+}
+
+#font-toggle:hover {
+  text-decoration: underline;
+}
+
 .easy-font,
 .easy-font * {
   font-family:
