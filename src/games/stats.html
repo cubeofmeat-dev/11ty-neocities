@@ -1,0 +1,180 @@
+---
+title: Da Stats
+layout: games-layout.html
+tags: games
+eleventyExcludeFromCollections: true
+---
+
+<a href="/games" id="back-button" class="snes-button has-plumber-color">X</a>
+<div class="snes-container has-aged-yellow-bg">
+  <h1 class="snes-container-title has-plumber-underline">Rating Stats</h1>
+  <p>
+    All games plotted by month and grade. Hover a dot to see the game title.
+  </p>
+
+  <div
+    style="position: relative; width: 100%; max-width: 900px; margin: 0 auto"
+  >
+    <canvas id="ratingChart"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script>
+  const GRADE_MAP = {
+    S: 10,
+    "A+": 9.5,
+    A: 9,
+    "A-": 8.5,
+    "B+": 8,
+    B: 7.5,
+    "B-": 7,
+    "C+": 6.5,
+    C: 6,
+    "C-": 5.5,
+    "D+": 5,
+    D: 4.5,
+    "D-": 4,
+    F: 0,
+  };
+
+  const GRADE_LABELS = [
+    "F",
+    "D-",
+    "D",
+    "D+",
+    "C-",
+    "C",
+    "C+",
+    "B-",
+    "B",
+    "B+",
+    "A-",
+    "A",
+    "A+",
+    "S",
+  ];
+  const GRADE_Y = {
+    F: 0,
+    "D-": 1,
+    D: 2,
+    "D+": 3,
+    "C-": 4,
+    C: 5,
+    "C+": 6,
+    "B-": 7,
+    B: 8,
+    "B+": 9,
+    "A-": 10,
+    A: 11,
+    "A+": 12,
+    S: 13,
+  };
+
+  const SNES_COLORS = [
+    "#e52521",
+    "#43b047",
+    "#006bb3",
+    "#f99b1d",
+    "#00a7e1",
+    "#a259c4",
+    "#f26522",
+    "#00b2a9",
+  ];
+
+  {% assign sortedPosts = collections.games | sort: "fileSlug" %}
+  {% assign monthIndex = 0 %}
+  const games = [
+    {%- for post in sortedPosts -%}
+      {%- if post.data.ratings -%}
+        {%- for entry in post.data.ratings -%}
+          { x: {{ monthIndex }}, game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: "{{ post.data.title }} {{ post.data.year }}" },
+        {%- endfor -%}
+        {%- assign monthIndex = monthIndex | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  ];
+
+  {%- assign sortedPosts = collections.games | sort: "fileSlug" -%}
+  const monthLabels = [
+    {%- for post in sortedPosts -%}
+      {%- if post.data.ratings -%}
+        "{{ post.data.title }} {{ post.data.year }}",
+      {%- endif -%}
+    {%- endfor -%}
+  ];
+
+  // jitter dots that share the same month+grade so they don't stack
+  const jitterMap = {};
+  const dataPoints = games.map((g) => {
+    const key = `${g.x}-${g.grade}`;
+    jitterMap[key] = (jitterMap[key] || 0) + 1;
+    const slot = jitterMap[key] - 1;
+    return {
+      x: g.x + slot * 0.18,
+      y: GRADE_Y[g.grade],
+      label: g.game,
+      grade: g.grade,
+      month: g.month,
+    };
+  });
+
+  // color each dot by month bucket
+  const dotColors = dataPoints.map(
+    (p) => SNES_COLORS[Math.floor(p.x) % SNES_COLORS.length],
+  );
+
+  const ctx = document.getElementById("ratingChart").getContext("2d");
+  new Chart(ctx, {
+    type: "scatter",
+    data: {
+      datasets: [
+        {
+          label: "Games",
+          data: dataPoints,
+          backgroundColor: dotColors,
+          borderColor: dotColors,
+          pointRadius: 8,
+          pointHoverRadius: 11,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.raw.label} — ${ctx.raw.grade}`,
+          },
+        },
+      },
+      scales: {
+        x: {
+          type: "linear",
+          min: -0.5,
+          max: monthLabels.length - 0.5,
+          ticks: {
+            stepSize: 1,
+            callback: (val) => monthLabels[Math.round(val)] ?? "",
+            color: "#333",
+            maxRotation: 45,
+            minRotation: 30,
+          },
+          grid: { color: "rgba(0,0,0,0.08)" },
+        },
+        y: {
+          type: "linear",
+          min: -0.5,
+          max: GRADE_LABELS.length - 0.5,
+          ticks: {
+            stepSize: 1,
+            callback: (val) => GRADE_LABELS[Math.round(val)] ?? "",
+            color: "#333",
+          },
+          grid: { color: "rgba(0,0,0,0.08)" },
+        },
+      },
+    },
+  });
+</script>
