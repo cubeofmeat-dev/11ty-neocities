@@ -12,6 +12,23 @@
 
 <body class="main-container">
   {{ content }}
+  <footer id="site-footer">
+    <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>
+    <a id="font-toggle" href="#" onclick="toggleFont(); return false;">Easy Font</a>
+  </footer>
+  <script>
+    (function() {
+      if (localStorage.getItem('easyFont')) {
+        document.body.classList.add('easy-font');
+        document.getElementById('font-toggle').textContent = 'Retro Font';
+      }
+    })();
+    function toggleFont() {
+      const isEasy = document.body.classList.toggle('easy-font');
+      document.getElementById('font-toggle').textContent = isEasy ? 'Retro Font' : 'Easy Font';
+      isEasy ? localStorage.setItem('easyFont', '1') : localStorage.removeItem('easyFont');
+    }
+  </script>
 </body>
 
 </html>
