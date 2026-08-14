@@ -9,17 +9,17 @@ eleventyExcludeFromCollections: true
 
 Letter grades representing the overall feel I have for a game. Largely weighing in fun factor, graphics, sound, experience, and replayability. The scoring I have is as followed:
 
-F - Horrible game - I would return this
+F - Horrible game - I would return this (Dont even look)
 
-D - Bad game - not worth playing all the way through
+D - Bad game - Not worth playing all the way through (Dont buy)
 
-C - Average game - worth seeing to the end, but probably wouldn't replay
+C - Average game - worth seeing to the end, but probably wouldn't replay (Wait for deep deep sale)
 
-B - Good game - worth experiencing, would replay, but not often
+B - Good game - worth experiencing, would replay, but not often (Wait for sale)
 
-A - Great game - the full package, worth replaying
+A - Great game - the full package, worth replaying (Buy)
 
-S - Masterpiece - one of a kind experience
+S - Masterpiece - one of a kind experience (BUY FULL PRICE)
 
 
 # Examples:
