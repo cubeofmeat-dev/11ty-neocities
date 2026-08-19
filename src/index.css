@@ -92,3 +92,20 @@ h3 {
   line-height: 1.5 !important;
   word-spacing: normal !important;
 }
+
+.snes-container s,
+.snes-container del,
+.snes-container strike {
+  color: #000;
+  text-decoration: none;
+  background-image: linear-gradient(#000, #000);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 44%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.rules-red {
+  color: #f22561;
+}

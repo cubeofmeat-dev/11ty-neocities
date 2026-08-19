@@ -9,17 +9,17 @@ eleventyExcludeFromCollections: true
 
 Letter grades representing the overall feel I have for a game. Largely weighing in fun factor, graphics, sound, experience, and replayability. The scoring I have is as followed:
 
-S - Masterpiece - one of a kind experience (BUY FULL PRICE)
+<span class="text-sunshine-color">S</span> - <span class="rules-red">Masterpiece</span> - one of a kind experience (BUY FULL PRICE)
 
-A - Good Ass Game - the full package, worth replaying (Buy)
+<span class="text-ocean-color">A</span> - <span class="rules-red">Good Ass Game</span> - the full package, worth replaying (Buy)
 
-B - Good ``Ass`` Game - worth experiencing, would replay, but not often (Wait for sale)
+<span class="text-nature-color">B</span> - <span class="rules-red">Good ~~Ass~~ Game</span> - worth experiencing, would replay, but not often (Wait for sale)
 
-C - ``Good Ass`` Game - worth seeing to the end, but probably wouldn't replay (Wait for deep deep sale)
+<span class="text-turquoise-color">C</span> - <span class="rules-red">~~Good Ass~~ Game</span> - worth seeing to the end, but probably wouldn't replay (Wait for deep sale)
 
-D - ``Good`` Ass Game - Not worth playing all the way through (Dont buy)
+<span class="text-ember-color">D</span> - <span class="rules-red">~~Good~~ Ass Game</span> - Not worth playing all the way through (Dont buy)
 
-F - ``Good`` Ass ``Game`` - I would return this (Dont even look)
+<span class="text-plumber-color">F</span> - <span class="rules-red">~~Good~~ Ass ~~Game~~</span> - I would return this (Dont even look)
 
 
 # Examples:
