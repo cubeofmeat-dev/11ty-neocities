@@ -1,4 +1,4 @@
-const { gradeScale, gradeToValue, valueToGrade, computeOverall } = require("./utils/gradeUtils.js");
+const { gradeScale, gradeToValue, valueToGrade, DEFAULT_CATEGORY_WEIGHTS, computeOverall } = require("./utils/gradeUtils.js");
 
 module.exports = function (eleventyConfig) {
   function stripTags(html) {
@@ -30,12 +30,7 @@ module.exports = function (eleventyConfig) {
     const rowMatches = [...tableHtml.matchAll(/<tbody>[\s\S]*?<\/tbody>/gi)];
     if (!rowMatches.length) return null;
 
-    const defaultCategoryWeights = new Map([
-      ["story", 25],
-      ["look & feel", 25],
-      ["sound & music", 25],
-      ["fun factor", 25],
-    ]);
+    const defaultCategoryWeights = DEFAULT_CATEGORY_WEIGHTS;
 
     let weightedSum = 0;
     let totalWeight = 0;
