@@ -13,7 +13,7 @@
 <body class="main-container">
   <a href="/games" id="back-button" class="snes-button has-plumber-color">X</a>
   <div class="snes-container has-aged-yellow-bg">
-    {{ content | gameFormat }}
+    {{ content | gameFormat: ratings }}
   </div>
   <footer id="site-footer">
     <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>

@@ -7,7 +7,15 @@ month: MM
 monthText: Month Name
 ratings:
   - game: GAME TITLE
-    grade: C
+    reportCard:
+      - category: Story
+        grade: C
+      - category: Look & Feel
+        grade: C
+      - category: Sound & Music
+        grade: C
+      - category: Fun Factor
+        grade: C
 eleventyExcludeFromCollections: true
 ---
 
@@ -33,7 +41,7 @@ _Quote Placeholder_
 
 ### Overall
 
-## C
+#### Report Card
 
 <p>
 	<img class="img-game snes-container no-padding" src="/images/picture-placeholder-1.jpg">
