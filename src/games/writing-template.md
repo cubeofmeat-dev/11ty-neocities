@@ -24,7 +24,7 @@ eleventyExcludeFromCollections: true
 _Date Placeholder_
 
 <p>
-		<img class="img-logo snes-container no-padding" src="/images/logo-placeholder.png">
+		<img class="img-logo snes-container no-padding" src="/images/game-logo.png">
 </p>
 
 _Quote Placeholder_
@@ -44,7 +44,7 @@ _Quote Placeholder_
 #### Report Card
 
 <p>
-	<img class="img-game snes-container no-padding" src="/images/picture-placeholder-1.jpg">
-	<img class="img-game snes-container no-padding" src="/images/picture-placeholder-2.jpg">
-	<img class="img-game snes-container no-padding" src="/images/picture-placeholder-3.jpg">
+	<img class="img-game snes-container no-padding" src="/images/game-img1.jpg">
+	<img class="img-game snes-container no-padding" src="/images/game-img2.jpg">
+	<img class="img-game snes-container no-padding" src="/images/game-img3.jpg">
 </p>
