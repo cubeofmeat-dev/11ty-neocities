@@ -1,13 +1,14 @@
 ---
-title: April 2026
-layout: months-layout.html
+title: ULTRAKILL
+layout: game-layout.html
 tags: games
+pageType: game
 year: 2026
 month: 04
 monthText: April
-ratings:
-  - game: "ULTRAKILL"
-    grade: "A"
+monthKey: 2026-04
+playedDate: 2026-04-24
+grade: A
 ---
 
 # ULTRAKILL

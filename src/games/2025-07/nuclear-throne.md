@@ -1,13 +1,14 @@
 ---
-title: July 2025
-layout: months-layout.html
+title: Nuclear Throne
+layout: game-layout.html
 tags: games
+pageType: game
 year: 2025
-month: 7
+month: 07
 monthText: July
-ratings:
-  - game: "Nuclear Throne"
-    grade: "S"
+monthKey: 2025-07
+playedDate: 2025-07-01
+grade: S
 ---
 
 # Nuclear Throne

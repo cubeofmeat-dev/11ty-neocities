@@ -1,13 +1,14 @@
 ---
-title: November 2025
-layout: months-layout.html
+title: Atlyss
+layout: game-layout.html
 tags: games
+pageType: game
 year: 2025
 month: 11
 monthText: November
-ratings:
-  - game: "Atlyss"
-    grade: "A"
+monthKey: 2025-11
+playedDate: 2025-11-01
+grade: A
 ---
 
 # Atlyss

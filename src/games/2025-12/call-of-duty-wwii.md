@@ -1,0 +1,34 @@
+---
+title: "Call of Duty: WWII"
+layout: game-layout.html
+tags: games
+pageType: game
+year: 2025
+month: 12
+monthText: December
+monthKey: 2025-12
+playedDate: 2025-12-01
+grade: A
+---
+
+# Call of Duty: WWII
+
+<p>
+    <img class="img-logo snes-container no-padding" src="/images/codww2-logo.png">
+</p>
+
+If World at War depicted the revenge and brutality of war from the players perspective, WWII depicts the fear war evokes. Gone are the times of hero stories, now you, as a fresh recruit, are thrown into this hell on earth, experiencing some of the most traumatic days humanity has ever seen. I was being setup for a potential favorite I didn’t even know I was going to have.
+
+The first few minutes of the campaign, you get that good ole Band of Brothers interaction. The guys are shooting the shit before the deployment, riffing against each other and establishing the characters you would get to know over time. The very next day is the Normandy invasion - D-Day. Now we’ve gotten D-Day before, doors open up, your friends are torn to shreds by the machine guns, you ascend to the bunkers and mission accomplished. At least that’s what I was expecting, until you are just in the boat writing a letter to you girl, helping a friend lite a cigarette, when he is shot right in front of you, starting the fear. You instinctively crouch in the boat with all of your squad while bullets whiz overhead. The ramps drop, and you know the rest. The sound mutes out, all the men are screaming, the bullets flying from every direction and the sound design makes it even scarier. You barely survived, and the game wanted you to know that. Up the beach further, you are responsible for using a “bangalore” to blow up an embankment so the troops can progress, having just been scared to nearly death, your character is fumbling with the primer, while your friends encourage you with affirmations of “you can do this”. The wall blows up, you secure the bunkers, and suddenly it’s over you are moving onto your next objective. Illustrating to me how horrible war can be, just for it to be over in a blink of an eye and have to just move on like nothing happened.
+
+The story takes a newer approach, where instead of multiple characters it places you in the shoes of Daniels, a Texas country boy seeing his first tour of action. The plot follows essentially the US involvement in the European campaign, and has you invading normandy, securing the French countryside and hill 400, moving to help secure secret documents in Paris with the French resistance, upwards to the Battle of the Bulge, and finally ending with crossing the Rhine into Germany. It was a natural progression of events, and sticking with one group of characters really helped you get attached to all the guys in your squad. There was huge tension between 2 of your commanding officers Turner and Pierson, which landed the squad into less than ideal circumstances more than once. A believable power struggle between duty, and morality which I really enjoyed. Despite being a relatively simple war plot, no crazy ideas means that execution can be well thought out, and the execution of the technical areas of the game is what really immersed me in the experience.
+
+Art and sound are very important to me when it comes to how immersed I can get in a game. While a game doesn’t have to be a technical masterpiece, a solid art foundation can overrule missing things like dynamic lightning, subsurface scattering, lower resolution textures and what not. WWII is a good looking game, not because it is the most technically impressive game of 2017 (that would probably go to a racing game or something where that photorealism matters more), but because of a solid identity in art. It takes a little exaggeration of colors and world, to give everything that Saving Private Ryan look. Heavy vignettes, deep blue filters, harsh sun glare, and film grain all affect the look of the art, and solidify this entry as one of the best looking CoDs Ive played. On top of excellent use of post processing effects, the sound design - omg the sound design. This finally took a page out of battlefields book with sounds that blow out your eardrums nearly. Deep booming explosions that muffle your hearing. Bullets popping by you really makes you feel like putting your head down in real life, not to mention music where it matters. Instead of hearing a bombastic soundtrack, you get those moments of war - silent, with nothing but bullets and screams. Horrifying and brutal, making the set pieces stand out even more.
+
+When an action game does a set piece, it’s normally a culmination of an event resulting in a massive moment that basically gives the game its identity. Think Uncharted 2 which was defined by the Train Crash, Modern Warfare 2 defined by its notorious No Russian mission, or the original Halo with driving through the Pillar of Autumn. To me, as special as Uncharted 2 is for its Train crash, WWII really gives it a run for its money with its version. Not only was the crash NOT supposed to happen, much like Uncharted, the moments leading up to its crash were all included in a dynamic set piece. You were working with the French resistance to capture a armored train carrying V2 rockets, you chase after said train while having control over the jeep you are in, switching seats with Zussman to shoot germans approaching to defend their precious cargo, back and forth, trying to reach the locomotive. You shoot at the train to get rid of guards on the inside, but the armored trains own guns shoot you off course and cause you to careen right into the tracks in front of the train. After narrowly escaping, the train swallows the jeep and begins to derail. Remember those V2 rockets? Yeah, not only a derailment, but a massive explosion as the train destroys a nearby station and crashes all around you. You are just sitting by watching the whole thing unfold, and it was awesome. I just remember thinking to myself, “how fucking long is this train?”, does it matter if it was realistic? No. Was it awesome? Absolutely.
+
+WWII can basically be summed up as someone’s passion project for wanting to really bring that feeling of the great war to life. This really felt like someone in the studio really cared about the project and it shined all the way through for me. The characters and story were memorable, albeit simple. The atmosphere, sound, and music all fit right in its place, and felt intentional, rewarding big moments with big sound and atmosphere. The gunplay is Call of Duty, of course that’s solid. There really just wasnt all that much bad to say about WWII - of the things I could gripe over aren’t even worth writing down because I enjoyed it so much. I think if the original developers of the first game wanted to make a Call of Duty 15 years later with new technology, this would be what they would have made.
+
+## A
+
+---

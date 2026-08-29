@@ -14,6 +14,11 @@
     <a href="/games" id="back-button" class="snes-button has-plumber-color">X</a>
     <div class="snes-container has-aged-yellow-bg">
         <h1 class="snes-container-title has-plumber-underline">{{ title }}</h1>
+        {% if content != blank %}
+        <div class="month-introduction">
+            {{ content }}
+        </div>
+        {% endif %}
         <div class="month-game-list">
             {% assign monthGames = collections.gameEntries | where: "data.monthKey", monthKey | sort: "data.playedDate"
             %}
