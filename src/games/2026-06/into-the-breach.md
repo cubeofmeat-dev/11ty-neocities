@@ -19,36 +19,42 @@ reportCard:
     grade: A+
 ---
 
-# Into the Breach
+# Into The Breach
 
 _June 2026_
 
 <p>
-	<img class="img-logo snes-container no-padding" src="/images/marathon-logo.png">
+	<img class="img-logo snes-container no-padding" src="/images/itb-logo.png">
 </p>
 
-_"Escape will make me God."_
+_You guys remember Advance Wars?_
 
-Marathon has held a special spot for me for a long time. As a historical "Bungie Guy", Marathon fit right into something I knew I was going to play. From its original presentation, to finally hearing Durandel's voice, I was hooked right from the beginning. I didn't really know how I would like the extraction shooter mechanics to the game, as part of me wishes Bungie would take another crack at an arena shooter, but what I got instead is an intense gear scramble with world class shooting mechanics, all wrapped up in such a solid design philosophy that makes it hard to stop playing. Since the release of season 2, I have been playing multiple nights a week, for hours at a time, pushing Marathon into some of my top played on Steam.
+### First Impression
 
-In the beginning, I knew Marathon would be a must play. The overall vibe to Marathon is unlike anything I have ever seen or played before. The intensely bright colors, minimal palette of the colony buildings, to the building block look of the weapons and inventory, all fit within this world seemingly built to make AI's job easier. All of the factions you speak to, are all AI representations of the in game Corporations, like nothing in the Marathon universe is even human anymore. It's awesome, and fits right into the design of the games visuals. While people complained that the game was "cartoony" or "looked like roblox", what I saw was intention. And through the in game story telling, you find out that the world was built with the AI first mindset. If the machine, who is primarily using cameras to identify buildings, brightly colored and easy to understand shapes would be the most important, not to mention cheaper for the corporation. This intention to the design of the game just makes the world feel so alive.
+So this was the second or third time starting into the breach. Coming from FTL, I was expecting a lot of the similar types of gameplay decisions that you had to make - a lot of on the fly, a lot of quick decision making. What I found instead Was a stupidly simple yet extremely deep strategy game. There's only so many units you have to play with, and only a set number of moves that you can make with each specific unit. The deepness in this game comes from how the units interact with one another and their placements on the board. A great game overall to come back to years to come, even if for only an hour at a time.
 
-Apart from how alive the game actually feels, to add on to game feel - its a Bungie game...I mean come on. Of course its gonna feel good. It feels so good to play. The guns have great weight. The movement has momentum, and different characters move in such different ways that just switching up your character will drastically change your experience in game. Each gun feels so different from one another, all with strengths and weaknesses (some with less weaknesses than others - looking at you Misriah). The TTK is inline to where it does feel like you are playing a Halo game - a few well placed shots to a out of position opponent and they are down. To top off all the gameplay we knew Bungie would get right, the baked in team play takes the game to another level, while still leaving room for skill expression.
+### Story
 
-The game on first play, reminded me a lot of Apex Legends. 3 man squads, emphasis on team synergy, communication, and full sending fights. All of its there, making Marathon truely feel like a BR at times. However, unlike the winner takes all mindset of BRs, you have an inherent risk/reward loop, making even the ballsy-est plays potentially not worth the trouble, since you can always disengage and extract early, as to not lose that glorious loot. Does it happen often, not really, but I have completely disengaged a fight to rotate the map when my teammates were down, just to get them back up again so we can either third party and win our gear back, or get out of dodge with our missions to complete. Since changing my mindset on losing gear however, the full send is the more fun way to play - especially considering gear is impermanent, and all of it goes away during the season wipe. I wasnt sure how I felt about extraction shooters before Marathon, but because of Marathon changing my thought process - I have came to enjoy the genre quite a lot, and I think Marathons idea of impermanence, with you being bound to a shell that isnt your real body, all the way down to the loot that you are just borrowing until someone takes it from you, really helped me experience the joys and all the white knuckling this game genre can give you, and if it wasnt for this game, I wouldnt have been able to experience more.
+There's not really much in terms of story going on here, You're basically a future soldier who has the innate ability to time travel, and every death you go back in time to see if you can try to save the world again. Simple and effective, while keeping in mind the core gameplay loop.
 
-The full package, I think Marathon truly succeeded in bringing extractions to a more casual player base. While I think the game has its issues, and perhaps may not last as long as some of the other more niche and intense extraction shooters out there, Marathon has permanently changed the landscape to what is actually possible in this genre. From the visual language, the incredible game feel, the even more incredible music, Marathon is a game to garner peoples respect. With all the hate gathered from mindless morons on instagram, calling for a "Concord 2", Marathon stood its ground in its design, and Bungie put out a game they clearly cared to support. While still too early in the games lifecycle to tell what is in store for the future, I hope Bungie continues on their path of support, because I would love to keep seeing the game improve for years to come.
+### Look & Feel
 
-_Note from the writer_
+Similar in look to other indie games, the pixel graphics work really well for into the breach. Just detailed enough for you to understand what You're looking at, and justice abstract enough to give it its own feel. The game is set on a small grid, and every map follows this grid rule. The grid being so core to gameplay, makes it also core to its look. As terms of feel, There's not much fuel to the game per se - however, The gameplay loop with your strategic decisions Fuel into how the game feels to play. It makes the game just as hard to put down as it is to pick up.
 
-_Marathon is truely something special. This was written out of love when I was really putting a lot more time into the game. I feel over time the game has gotten to a point where it has soulcrushingly placed me in lobbies with people who simply do not have jobs and do not stop playing the game, really hindering on the overall experience. I think over time Bungie has only listened to the most dedicated fan base and since then has lost a lot of players because of it. The loot economy is spoiled with endless purple kits, and to even play casually makes you the laughing stock of the game. There simply is no casual play in Marathon anymore. Eventually, even with the new vault breaker PvE mode, which allowed you to explore the bowels of the Marathon, the map is already such a fustercluck of rooms/hallways and cryptic bullshit to be able to solve the vault. Hey Bungie, idk when the last time you checked, but your casual playerbase doesnt have 10 hours a day to learn a raid run. Even if its a more guided experience, you have to be on your best gameplay, furthering the truth that Marathon just isnt a game for casual players. Remember when you could hop on a new game for an hour and have a blast even when you werent doing so hot? Perhaps that just is the nature of the extraction shooter and battle royal games. Either you are winning it all, or why are you even playing. A larger topic on the state of multiplayer games in general. Marathon scratched an itch for a while - now that the casual playerbase is gone, so is the fun._
+### Sound & Music
 
-## B
+Sound and music left a little bit to be desired for me. I really wanted the soundtrack to go hard, but it kind of had this generic sci-fi aura to it that I really wasn't a fan of. So much so, that I often just muted the game entirely just to listen to something else in the background. Sound effects were fine, and served the purpose of the game by relaying key information when it was needed - Nothing over the top, but it works.
+
+### Fun Factor
+
+You get what you're willing to put into this game, out back in fun. It's a lot of fun to be had and it was easy for me to sink hours into it on my first playthrough. It's one of those games that you just play on the couch occasionally while waiting to go to the movies, or waiting for dinner. Something quick, Something fun, and something easy to digest.
+
+### Overall
+
+My general feel of the game Is that it's a lot like Tetris. Tetris is a game you can pick up and put down very easily for minutes, or even hours. Into the breach is a lot like that. I often find myself needing to waste 15 minutes, and picking up the game just to run one scenario, which is great. We need more games that fill this kind of role, and it feels very old school in that sense. Pick up where you left off, whittle the game down 15 minutes at a time. Those 15 minutes add up to hours, And those hours I feel will add up to years.
+
+#### Report Card
 
 <p>
-	<img class="img-game snes-container no-padding" src="/images/marathon-img1.jpg">
-	<img class="img-game snes-container no-padding" src="/images/marathon-img2.jpg">
-	<img class="img-game snes-container no-padding" src="/images/marathon-img3.jpg">
+	<img class="img-game snes-container no-padding" src="/images/itb-img1.png">
 </p>
-
----

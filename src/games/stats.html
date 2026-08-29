@@ -83,22 +83,22 @@ eleventyExcludeFromCollections: true
   {% assign sortedPosts = collections.gameMonths | sort: "fileSlug" %}
   {% assign monthIndex = 0 %}
   const games = [
-    {% - for post in sortedPosts -%}
-  {% - assign monthNumber = post.data.month | prepend: "0" | slice: -2, 2 -%}
-  {% - assign monthKey = post.data.year | append: "-" | append: monthNumber -%}
-  {% - assign monthRatings = collections.gameRatings | where: "monthKey", monthKey -%}
-  {% - for entry in monthRatings -%}
-  { x: { { monthIndex } }, game: { { entry.game | json } }, grade: { { entry.grade | json } }, month: "{{ post.data.month }}/{{ post.data.year }}" },
-  {% - endfor -%}
-  {% - assign monthIndex = monthIndex | plus: 1 -%}
-  {% - endfor -%}
+    {%- for post in sortedPosts -%}
+  {%- assign monthNumber = post.data.month | prepend: "0" | slice: -2, 2 -%}
+  {%- assign monthKey = post.data.year | append: "-" | append: monthNumber -%}
+  {%- assign monthRatings = collections.gameRatings | where: "monthKey", monthKey -%}
+  {%- for entry in monthRatings -%}
+  { x: {{ monthIndex }}, game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: "{{ post.data.month }}/{{ post.data.year }}" },
+  {%- endfor -%}
+  {%- assign monthIndex = monthIndex | plus: 1 -%}
+  {%- endfor -%}
   ];
 
-  {% - assign sortedPosts = collections.gameMonths | sort: "fileSlug" -%}
+  {%- assign sortedPosts = collections.gameMonths | sort: "fileSlug" -%}
   const monthLabels = [
-    {% - for post in sortedPosts -%}
+    {%- for post in sortedPosts -%}
   "{{ post.data.month }}/{{ post.data.year }}",
-    {% - endfor -%}
+    {%- endfor -%}
   ];
 
   // jitter dots that share the same month+grade so they don't stack

@@ -8,7 +8,46 @@ month: 06
 monthText: June
 monthKey: 2026-06
 playedDate: 2026-06-01
-grade: B
+ratings:
+  - game: "Marathon"
+    reportCard:
+      - category: Story
+        grade: B+
+      - category: Look & Feel
+        grade: S
+      - category: Sound & Music
+        grade: A+
+      - category: Fun Factor
+        grade: C
 ---
 
-_This month has been pretty weird. As a write this in July my retrospective is full of half completed games, or games that don't really have an end. I want to record this here as a record to myself. "Hey, we were quite busy with games this month. On top of that, we were quite busy with work." A lot of the games here were couch time games, which I needed - since sitting at a desk to game after sitting at a desk all day isn't always the vibe I want. Perhaps I need a new chair..._
+# Marathon
+
+_June 2026_
+
+<p>
+	<img class="img-logo snes-container no-padding" src="/images/marathon-logo.png">
+</p>
+
+_"Escape will make me God."_
+
+Marathon has held a special spot for me for a long time. As a historical "Bungie Guy", Marathon fit right into something I knew I was going to play. From its original presentation, to finally hearing Durandel's voice, I was hooked right from the beginning. I didn't really know how I would like the extraction shooter mechanics to the game, as part of me wishes Bungie would take another crack at an arena shooter, but what I got instead is an intense gear scramble with world class shooting mechanics, all wrapped up in such a solid design philosophy that makes it hard to stop playing. Since the release of season 2, I have been playing multiple nights a week, for hours at a time, pushing Marathon into some of my top played on Steam.
+
+In the beginning, I knew Marathon would be a must play. The overall vibe to Marathon is unlike anything I have ever seen or played before. The intensely bright colors, minimal palette of the colony buildings, to the building block look of the weapons and inventory, all fit within this world seemingly built to make AI's job easier. All of the factions you speak to, are all AI representations of the in game Corporations, like nothing in the Marathon universe is even human anymore. It's awesome, and fits right into the design of the games visuals. While people complained that the game was "cartoony" or "looked like roblox", what I saw was intention. And through the in game story telling, you find out that the world was built with the AI first mindset. If the machine, who is primarily using cameras to identify buildings, brightly colored and easy to understand shapes would be the most important, not to mention cheaper for the corporation. This intention to the design of the game just makes the world feel so alive.
+
+Apart from how alive the game actually feels, to add on to game feel - its a Bungie game...I mean come on. Of course its gonna feel good. It feels so good to play. The guns have great weight. The movement has momentum, and different characters move in such different ways that just switching up your character will drastically change your experience in game. Each gun feels so different from one another, all with strengths and weaknesses (some with less weaknesses than others - looking at you Misriah). The TTK is inline to where it does feel like you are playing a Halo game - a few well placed shots to a out of position opponent and they are down. To top off all the gameplay we knew Bungie would get right, the baked in team play takes the game to another level, while still leaving room for skill expression.
+The game on first play, reminded me a lot of Apex Legends. 3 man squads, emphasis on team synergy, communication, and full sending fights. All of its there, making Marathon truely feel like a BR at times. However, unlike the winner takes all mindset of BRs, you have an inherent risk/reward loop, making even the ballsy-est plays potentially not worth the trouble, since you can always disengage and extract early, as to not lose that glorious loot. Does it happen often, not really, but I have completely disengaged a fight to rotate the map when my teammates were down, just to get them back up again so we can either third party and win our gear back, or get out of dodge with our missions to complete. Since changing my mindset on losing gear however, the full send is the more fun way to play - especially considering gear is impermanent, and all of it goes away during the season wipe. I wasnt sure how I felt about extraction shooters before Marathon, but because of Marathon changing my thought process - I have came to enjoy the genre quite a lot, and I think Marathons idea of impermanence, with you being bound to a shell that isnt your real body, all the way down to the loot that you are just borrowing until someone takes it from you, really helped me experience the joys and all the white knuckling this game genre can give you, and if it wasnt for this game, I wouldnt have been able to experience more.
+
+The full package, I think Marathon truly succeeded in bringing extractions to a more casual player base. While I think the game has its issues, and perhaps may not last as long as some of the other more niche and intense extraction shooters out there, Marathon has permanently changed the landscape to what is actually possible in this genre. From the visual language, the incredible game feel, the even more incredible music, Marathon is a game to garner peoples respect. With all the hate gathered from mindless morons on instagram, calling for a "Concord 2", Marathon stood its ground in its design, and Bungie put out a game they clearly cared to support. While still too early in the games lifecycle to tell what is in store for the future, I hope Bungie continues on their path of support, because I would love to keep seeing the game improve for years to come.
+
+_Note from the writer_
+
+_Marathon is truely something special. This was written out of love when I was really putting a lot more time into the game. I feel over time the game has gotten to a point where it has soulcrushingly placed me in lobbies with people who simply do not have jobs and do not stop playing the game, really hindering on the overall experience. I think over time Bungie has only listened to the most dedicated fan base and since then has lost a lot of players because of it. The loot economy is spoiled with endless purple kits, and to even play casually makes you the laughing stock of the game. There simply is no casual play in Marathon anymore. Eventually, even with the new vault breaker PvE mode, which allowed you to explore the bowels of the Marathon, the map is already such a fustercluck of rooms/hallways and cryptic bullshit to be able to solve the vault. Hey Bungie, idk when the last time you checked, but your casual playerbase doesnt have 10 hours a day to learn a raid run. Even if its a more guided experience, you have to be on your best gameplay, furthering the truth that Marathon just isnt a game for casual players. Remember when you could hop on a new game for an hour and have a blast even when you werent doing so hot? Perhaps that just is the nature of the extraction shooter and battle royal games. Either you are winning it all, or why are you even playing. A larger topic on the state of multiplayer games in general. Marathon scratched an itch for a while - now that the casual playerbase is gone, so is the fun._
+
+#### Report Card
+
+<p>
+	<img class="img-game snes-container no-padding" src="/images/marathon-img1.jpg">
+	<img class="img-game snes-container no-padding" src="/images/marathon-img2.jpg">
+	<img class="img-game snes-container no-padding" src="/images/marathon-img3.jpg">
+</p>
