@@ -2,36 +2,36 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title }}</title>
-  <link rel="icon" type="image/x-icon" href="/images/cubeofmeat-favicon-gaming.png" />
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/snes.css@1.0.1/dist/snes.min.css" />
-  <link rel="stylesheet" type="text/css" href="/index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="icon" type="image/x-icon" href="/images/cubeofmeat-favicon-gaming.png" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/snes.css@1.0.1/dist/snes.min.css" />
+    <link rel="stylesheet" type="text/css" href="/index.css" />
 </head>
 
 <body class="main-container">
-  <a href="/games/{{ monthKey }}/" id="back-button" class="snes-button has-plumber-color">X</a>
-  <div class="snes-container has-aged-yellow-bg">
-    {{ content | gameFormat: ratings, reportCard }}
-  </div>
-  <footer id="site-footer">
-    <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>
-    <a id="font-toggle" href="#" onclick="toggleFont(); return false;">Easy Font</a>
-  </footer>
-  <script>
-    (function() {
-      if (localStorage.getItem('easyFont')) {
-        document.body.classList.add('easy-font');
-        document.getElementById('font-toggle').textContent = 'Retro Font';
-      }
-    })();
-    function toggleFont() {
-      const isEasy = document.body.classList.toggle('easy-font');
-      document.getElementById('font-toggle').textContent = isEasy ? 'Retro Font' : 'Easy Font';
-      isEasy ? localStorage.setItem('easyFont', '1') : localStorage.removeItem('easyFont');
-    }
-  </script>
+    <a href="/games/{{ monthKey }}/" id="back-button" class="snes-button has-plumber-color">X</a>
+    <div class="snes-container has-aged-yellow-bg">
+        {{ content | gameFormat: ratings, reportCard }}
+    </div>
+    <footer id="site-footer">
+        <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>
+        <a id="font-toggle" href="#" onclick="toggleFont(); return false;">Easy Font</a>
+    </footer>
+    <script>
+        (function () {
+            if (localStorage.getItem('easyFont')) {
+                document.body.classList.add('easy-font');
+                document.getElementById('font-toggle').textContent = 'Retro Font';
+            }
+        })();
+        function toggleFont() {
+            const isEasy = document.body.classList.toggle('easy-font');
+            document.getElementById('font-toggle').textContent = isEasy ? 'Retro Font' : 'Easy Font';
+            isEasy ? localStorage.setItem('easyFont', '1') : localStorage.removeItem('easyFont');
+        }
+    </script>
 </body>
 
 </html>
