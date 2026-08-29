@@ -23,19 +23,28 @@
   width: 200px;
 }
 
-.month-game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-  align-items: stretch;
+.month-game-list {
+  margin: 1rem 0;
 }
 
-#buttons .month-game-button {
-  width: auto;
-  min-height: 4.5rem;
-  padding: 0.75rem 1rem;
-  line-height: 1.25;
-  text-align: center;
-  white-space: normal;
+.month-game-entry {
+  margin: 0.75rem 0;
+}
+
+.month-game-entry a {
+  color: #000;
+  overflow-wrap: anywhere;
+}
+
+.month-game-entry::before {
+  content: "•";
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.month-game-entry a:hover,
+.month-game-entry a:focus-visible {
+  color: #006bb3;
 }
 
 #back-button {

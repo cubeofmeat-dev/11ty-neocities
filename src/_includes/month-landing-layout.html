@@ -14,18 +14,11 @@
     <a href="/games" id="back-button" class="snes-button has-plumber-color">X</a>
     <div class="snes-container has-aged-yellow-bg">
         <h1 class="snes-container-title has-plumber-underline">{{ title }}</h1>
-        <div id="buttons" class="item-grid month-game-grid">
+        <div class="month-game-list">
             {% assign monthGames = collections.gameEntries | where: "data.monthKey", monthKey | sort: "data.playedDate"
             %}
-            {% assign colors =
-            "has-plumber-color,has-nature-color,has-sunshine-color,has-ocean-color,has-turquoise-color,has-phantom-color,has-rose-color,has-galaxy-color,has-ember-color"
-            | split: "," %}
             {% for game in monthGames %}
-            {% assign colorIndex = forloop.index0 | modulo: colors.size %}
-            <button class="snes-button month-game-button {{ colors[colorIndex] }}"
-                onclick="window.location.href='{{ game.url }}'">
-                {{ game.data.title }}
-            </button>
+            <h2 class="month-game-entry"><a href="{{ game.url }}">{{ game.data.title }}</a></h2>
             {% endfor %}
         </div>
     </div>

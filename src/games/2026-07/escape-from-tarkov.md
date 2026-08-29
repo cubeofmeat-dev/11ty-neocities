@@ -1,21 +1,22 @@
 ---
-title: July 2026
-layout: months-layout.html
+title: Escape From Tarkov
+layout: game-layout.html
 tags: games
+pageType: game
 year: 2026
 month: 07
 monthText: July
-ratings:
-  - game: "Escape From Tarkov"
-    reportCard:
-      - category: Story
-        grade: B
-      - category: Look & Feel
-        grade: B+
-      - category: Sound & Music
-        grade: B+
-      - category: Fun Factor
-        grade: A-
+monthKey: 2026-07
+playedDate: 2026-07-01
+reportCard:
+  - category: Story
+    grade: B
+  - category: Look & Feel
+    grade: B+
+  - category: Sound & Music
+    grade: B+
+  - category: Fun Factor
+    grade: A-
 ---
 
 # Escape From Tarkov
