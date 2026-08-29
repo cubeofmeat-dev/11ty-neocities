@@ -1,21 +1,22 @@
 ---
-title: TITLE PLACEHOLDER
-layout: months-layout.html
+title: "TITLE PLACEHOLDER"
+layout: game-layout.html
 tags: games
+pageType: game
 year: YYYY
 month: MM
 monthText: Month Name
-ratings:
-  - game: GAME TITLE
-    reportCard:
-      - category: Story
-        grade: C
-      - category: Look & Feel
-        grade: C
-      - category: Sound & Music
-        grade: C
-      - category: Fun Factor
-        grade: C
+monthKey: YYYY-MM
+playedDate: YYYY-MM-DD
+reportCard:
+  - category: Story
+    grade: C
+  - category: Look & Feel
+    grade: C
+  - category: Sound & Music
+    grade: C
+  - category: Fun Factor
+    grade: C
 eleventyExcludeFromCollections: true
 ---
 

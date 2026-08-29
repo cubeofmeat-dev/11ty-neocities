@@ -82,27 +82,24 @@ eleventyExcludeFromCollections: true
     "#00b2a9",
   ];
 
-  {% assign sortedPosts = collections.games | sort: "fileSlug" %}
+  {% assign sortedPosts = collections.gameMonths | sort: "fileSlug" %}
   {% assign monthIndex = 0 %}
   const games = [
     {%- for post in sortedPosts -%}
-      {%- if post.data.ratings -%}
-        {%- for entry in post.data.ratings -%}
-          {%- if entry.grade -%}
-          { x: {{ monthIndex }}, game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: "{{ post.data.month }}/{{ post.data.year }}" },
-          {%- endif -%}
-        {%- endfor -%}
-        {%- assign monthIndex = monthIndex | plus: 1 -%}
-      {%- endif -%}
+      {%- assign monthNumber = post.data.month | prepend: "0" | slice: -2, 2 -%}
+      {%- assign monthKey = post.data.year | append: "-" | append: monthNumber -%}
+      {%- assign monthRatings = collections.gameRatings | where: "monthKey", monthKey -%}
+      {%- for entry in monthRatings -%}
+        { x: {{ monthIndex }}, game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: "{{ post.data.month }}/{{ post.data.year }}" },
+      {%- endfor -%}
+      {%- assign monthIndex = monthIndex | plus: 1 -%}
     {%- endfor -%}
   ];
 
-  {%- assign sortedPosts = collections.games | sort: "fileSlug" -%}
+  {%- assign sortedPosts = collections.gameMonths | sort: "fileSlug" -%}
   const monthLabels = [
     {%- for post in sortedPosts -%}
-      {%- if post.data.ratings -%}
-        "{{ post.data.month }}/{{ post.data.year }}",
-      {%- endif -%}
+      "{{ post.data.month }}/{{ post.data.year }}",
     {%- endfor -%}
   ];
 

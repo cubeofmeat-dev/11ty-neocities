@@ -23,7 +23,7 @@ title: Games Archive
       <a class="snes-link text-ocean-color" href="/games/stats">Stats for nerds.</a>
     </p>
     <p>
-      {% assign postsByYear = collections.games | group_by: "data.year" | reverse %} {% for
+      {% assign postsByYear = collections.gameMonths | group_by: "data.year" | reverse %} {% for
       eachYear in postsByYear %}
     <h2 class="snes-container-title">{{ eachYear.name }}</h2>
     <div id="buttons" class="item-grid">

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/x-icon" href="/images/cubeofmeat-favicon-gaming.png" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/snes.css@1.0.1/dist/snes.min.css" />
+  <link rel="stylesheet" type="text/css" href="/index.css" />
+</head>
+
+<body class="main-container">
+  <a href="/games" id="back-button" class="snes-button has-plumber-color">X</a>
+  <div class="snes-container has-aged-yellow-bg">
+    <h1 class="snes-container-title has-plumber-underline">{{ title }}</h1>
+    <div id="buttons" class="item-grid month-game-grid">
+      {% assign monthGames = collections.gameEntries | where: "data.monthKey", monthKey | sort: "data.playedDate" %}
+      {% assign colors = "has-plumber-color,has-nature-color,has-sunshine-color,has-ocean-color,has-turquoise-color,has-phantom-color,has-rose-color,has-galaxy-color,has-ember-color" | split: "," %}
+      {% for game in monthGames %}
+        {% assign colorIndex = forloop.index0 | modulo: colors.size %}
+        <button class="snes-button month-game-button {{ colors[colorIndex] }}" onclick="window.location.href='{{ game.url }}'">
+          {{ game.data.title }}
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+  <footer id="site-footer">
+    <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>
+    <a id="font-toggle" href="#" onclick="toggleFont(); return false;">Easy Font</a>
+  </footer>
+  <script>
+    (function() {
+      if (localStorage.getItem('easyFont')) {
+        document.body.classList.add('easy-font');
+        document.getElementById('font-toggle').textContent = 'Retro Font';
+      }
+    })();
+    function toggleFont() {
+      const isEasy = document.body.classList.toggle('easy-font');
+      document.getElementById('font-toggle').textContent = isEasy ? 'Retro Font' : 'Easy Font';
+      isEasy ? localStorage.setItem('easyFont', '1') : localStorage.removeItem('easyFont');
+    }
+  </script>
+</body>
+
+</html>

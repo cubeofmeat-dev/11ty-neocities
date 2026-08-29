@@ -23,6 +23,21 @@
   width: 200px;
 }
 
+.month-game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  align-items: stretch;
+}
+
+#buttons .month-game-button {
+  width: auto;
+  min-height: 4.5rem;
+  padding: 0.75rem 1rem;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
+}
+
 #back-button {
   float: right;
   position: relative;

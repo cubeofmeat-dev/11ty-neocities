@@ -124,7 +124,50 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/index.css");
   eleventyConfig.addPassthroughCopy("src/images");
 
-  eleventyConfig.addFilter("gameFormat", function (content, ratings) {
+  eleventyConfig.addCollection("gameMonths", function (collectionApi) {
+    return collectionApi
+      .getFilteredByTag("games")
+      .filter((item) => item.data.ratings || item.data.pageType === "month");
+  });
+
+  eleventyConfig.addCollection("gameEntries", function (collectionApi) {
+    return collectionApi
+      .getFilteredByTag("games")
+      .filter((item) => item.data.pageType === "game")
+      .sort((left, right) => String(left.data.playedDate || "").localeCompare(String(right.data.playedDate || "")));
+  });
+
+  eleventyConfig.addCollection("gameRatings", function (collectionApi) {
+    const records = [];
+
+    for (const item of collectionApi.getFilteredByTag("games")) {
+      if (item.data.pageType === "game" && item.data.grade) {
+        records.push({
+          game: item.data.title,
+          grade: item.data.grade,
+          year: item.data.year,
+          month: item.data.month,
+          monthKey: item.data.monthKey,
+        });
+      }
+
+      for (const rating of item.data.ratings || []) {
+        if (rating.grade) {
+          records.push({
+            game: rating.game,
+            grade: rating.grade,
+            year: item.data.year,
+            month: item.data.month,
+            monthKey: `${item.data.year}-${String(item.data.month).padStart(2, "0")}`,
+          });
+        }
+      }
+    }
+
+    return records;
+  });
+
+  eleventyConfig.addFilter("gameFormat", function (content, ratings, reportCard) {
     const colorMap = new Map([
       ["F", "has-plumber-underline"],
       ["B", "has-nature-underline"],
@@ -164,7 +207,9 @@ module.exports = function (eleventyConfig) {
     // Replace each Report Card section. Only ratings entries that have a reportCard array
     // are eligible for front matter rendering — this keeps non-itemized games (that carry
     // a manual grade but no reportCard) from consuming a slot in the index.
-    const ratingsWithCard = (ratings || []).filter((e) => e.reportCard);
+    const ratingsWithCard = reportCard
+      ? [{ reportCard }]
+      : (ratings || []).filter((e) => e.reportCard);
     let reportCardIndex = 0;
     formatted = formatted.replace(
       /<h4[^>]*>\s*Report Card\s*<\/h4>(\s*<table[^>]*>([\s\S]*?)<\/table>)?/gi,
