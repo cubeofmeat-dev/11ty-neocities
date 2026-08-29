@@ -8,17 +8,15 @@ month: 06
 monthText: June
 monthKey: 2026-06
 playedDate: 2026-06-01
-ratings:
-  - game: "Marathon"
-    reportCard:
-      - category: Story
-        grade: B+
-      - category: Look & Feel
-        grade: S
-      - category: Sound & Music
-        grade: A+
-      - category: Fun Factor
-        grade: C
+reportCard:
+  - category: Story
+    grade: B+
+  - category: Look & Feel
+    grade: S
+  - category: Sound & Music
+    grade: A+
+  - category: Fun Factor
+    grade: C
 ---
 
 # Marathon
