@@ -17,7 +17,7 @@ reportCard:
     grade: C
   - category: Fun Factor
     grade: C
-eleventyExcludeFromCollections: true
+eleventyExcludeFromCollections: true # REMOVE WHEN COPYING TO NEW FILE
 ---
 
 # GAME TITLE
