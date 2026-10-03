@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/x-icon" href="/images/cubeofmeat-favicon-gaming.png" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/xp.css@0.2.3/dist/XP.css" />
+  <link rel="stylesheet" type="text/css" href="/index.css" />
+</head>
+
+<body class="main-container rules-page">
+  <main class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">{{ title }}</div>
+      <form class="title-bar-controls" action="/games/" method="get">
+        <button type="submit" aria-label="Close"></button>
+      </form>
+    </div>
+    <div class="window-body">
+      {% assign formatted_rules = content | gameFormat: ratings %}
+      <menu role="tablist" aria-label="Game rating rules">
+        <button id="rules-tab-rating-scale" type="button" role="tab" aria-selected="true"
+          aria-controls="rules-panel-rating-scale" tabindex="0">Rating scale</button>
+        <button id="rules-tab-examples" type="button" role="tab" aria-selected="false"
+          aria-controls="rules-panel-examples" tabindex="-1">Examples</button>
+      </menu>
+      <article id="rules-panel-rating-scale" role="tabpanel" aria-labelledby="rules-tab-rating-scale" tabindex="0">
+        {{ formatted_rules | rulesRatingScale }}
+      </article>
+      <article id="rules-panel-examples" role="tabpanel" aria-labelledby="rules-tab-examples" tabindex="0" hidden>
+        {{ formatted_rules | rulesExamples }}
+      </article>
+    </div>
+  </main>
+  <footer id="site-footer" class="title-bar">
+    <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>
+  </footer>
+  {% include "tabs-script.html" %}
+</body>
+
+</html>

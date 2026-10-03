@@ -1,6 +1,6 @@
 ---
 title: August 2026
-layout: month-landing-layout.html
+permalink: false
 tags: games
 pageType: month
 year: 2026

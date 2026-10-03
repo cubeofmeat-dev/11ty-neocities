@@ -1,4 +1,6 @@
 const { gradeScale, gradeToValue, valueToGrade, DEFAULT_CATEGORY_WEIGHTS, computeOverall } = require("./utils/gradeUtils.js");
+const MarkdownIt = require("markdown-it");
+const markdown = new MarkdownIt();
 
 module.exports = function (eleventyConfig) {
   function stripTags(html) {
@@ -123,6 +125,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/index.css");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addFilter("markdownify", (content) => markdown.render(String(content || "")));
 
   eleventyConfig.addCollection("gameMonths", function (collectionApi) {
     return collectionApi
@@ -229,6 +232,20 @@ module.exports = function (eleventyConfig) {
 
     return formatted;
   });
+
+  function splitRulesSections(content) {
+    const examplesHeading = /<h2\b[^>]*>\s*Examples:\s*<\/h2>/i;
+    const match = examplesHeading.exec(content);
+    if (!match) return { ratingScale: content, examples: "" };
+
+    return {
+      ratingScale: content.slice(0, match.index),
+      examples: content.slice(match.index),
+    };
+  }
+
+  eleventyConfig.addFilter("rulesRatingScale", (content) => splitRulesSections(content).ratingScale);
+  eleventyConfig.addFilter("rulesExamples", (content) => splitRulesSections(content).examples);
 
   return {
     dir: {

@@ -1,21 +1,29 @@
 ---
 title: Da Stats
-layout: games-layout.html
+layout: games-stats-layout.html
 tags: games
 eleventyExcludeFromCollections: true
 ---
 
-<a href="/games" id="back-button" class="snes-button has-plumber-color">X</a>
-<div class="snes-container has-aged-yellow-bg">
-  <h1 class="snes-container-title has-plumber-underline">Rating Stats</h1>
-  <p>
-    All games plotted by month and grade. Hover a dot to see the game title.
-  </p>
-
-  <div style="position: relative; width: 100%; max-width: 900px; margin: 0 auto">
-    <canvas id="ratingChart"></canvas>
+<main class="window">
+  <div class="title-bar">
+    <div class="title-bar-text" role="heading" aria-level="1">Rating Stats</div>
+    <form class="title-bar-controls" action="/games/" method="get">
+      <button type="submit" aria-label="Close"></button>
+    </form>
   </div>
-</div>
+  <div class="window-body">
+    <article class="rating-chart-panel">
+      <p>
+        All games plotted by month and grade. Hover a dot to see the game title.
+      </p>
+
+      <div class="rating-chart" style="position: relative; width: 100%; max-width: 900px; margin: 0 auto">
+        <canvas id="ratingChart"></canvas>
+      </div>
+    </article>
+  </div>
+</main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script>

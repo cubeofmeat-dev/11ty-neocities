@@ -3,10 +3,13 @@ layout: index-layout.html
 title: CubeOfMeat Official Fan Site
 ---
 
-<div class="snes-container has-aged-yellow-bg" style="margin-top: 3rem">
-    <h1 class="snes-container-title has-phantom-underline">
+<main class="window">
+  <div class="title-bar">
+    <div class="title-bar-text" role="heading" aria-level="1">
       CubeOfMeat Official Fan Site
-    </h1>
+    </div>
+  </div>
+  <div class="window-body">
     <p>
       Hello, I am CubeOfMeat. I like gaming, software development, and music. I
       like to post about the games that I play, as well as a sort of dev blog
@@ -14,30 +17,31 @@ title: CubeOfMeat Official Fan Site
       the site to see my reviews and other content using the tabs above. Feel
       free to drop a message in the guest book below!
     </p>
-    <div id="buttons" class="item-grid">
+    <nav id="home-navigation" aria-label="Site links">
       <button
-        class="snes-button has-plumber-color"
+        type="button"
         onclick="window.location.href = '/games'"
       >
         Games
       </button>
       <button
-        class="snes-button has-nature-color"
+        type="button"
         onclick="window.location.href = 'https://cubeofmeat.atabook.org'"
       >
         Guests
       </button>
       <button
-        class="snes-button has-sunshine-color"
+        type="button"
         onclick="window.location.href = 'https://github.com/cubeofmeat-dev'"
       >
         GitHub
       </button>
       <button
-        class="snes-button has-ocean-color"
+        type="button"
         onclick="window.location.href = 'https://discord.gg/kMaMrb3v7A'"
       >
         Discord
       </button>
-    </div>
+    </nav>
   </div>
+</main>

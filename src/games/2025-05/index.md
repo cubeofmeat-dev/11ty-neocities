@@ -1,6 +1,6 @@
 ---
 title: May 2025
-layout: month-landing-layout.html
+permalink: false
 tags: games
 pageType: month
 year: 2025

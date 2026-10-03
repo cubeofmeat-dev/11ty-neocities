@@ -2,11 +2,27 @@
   padding: 0 !important;
 }
 
+:root {
+  --xp-window-max-width: 800px;
+}
+
 .main-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
   margin-top: 3rem;
+}
+
+body.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3rem);
+}
+
+body.main-container::after {
+  content: "";
+  flex: 1 0 auto;
+  order: 1;
 }
 
 .item-grid {
@@ -21,6 +37,55 @@
 
 #buttons .snes-button {
   width: 200px;
+}
+
+.homepage .window,
+.rules-page .window,
+.games-page .window {
+  box-sizing: border-box;
+  width: min(var(--xp-window-max-width), calc(100vw - 40px));
+  max-width: var(--xp-window-max-width);
+  margin: 0 auto;
+}
+
+body.homepage {
+  box-sizing: border-box;
+  background-color: #87ceeb;
+  background-image: url("/images/bliss.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 6rem;
+}
+
+.homepage .window-body {
+  line-height: 1.5;
+}
+
+.homepage .window-body p,
+.homepage #home-navigation button,
+.homepage #site-footer > span {
+  font-size: 16px;
+}
+
+.homepage .window-body > p,
+.rules-page [role="tabpanel"] > * {
+  max-width: 70ch;
+  margin-inline: auto;
+}
+
+.homepage .title-bar-text {
+  font-size: 18px;
+}
+
+.homepage #home-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.homepage #home-navigation button {
+  flex: 1 1 8rem;
 }
 
 .month-game-list {
@@ -68,8 +133,24 @@ img.img-logo {
 }
 
 @media (max-width: 520px) {
+  body.homepage {
+    padding-bottom: 8rem;
+  }
+
+  body.main-container.rules-page {
+    padding: 1rem 12px 4rem;
+  }
+
+  body.main-container.games-page {
+    padding: 1rem 12px 4rem;
+  }
+
   #buttons .snes-button {
     width: 100%;
+  }
+
+  .homepage #home-navigation button {
+    flex-basis: 100%;
   }
 
   img.img-logo {
@@ -95,26 +176,138 @@ h3 {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  order: 2;
 }
 
-#font-toggle {
-  text-decoration: none;
+.homepage #site-footer.title-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-top: 0;
+  color: #fff;
 }
 
-#font-toggle:hover {
-  text-decoration: underline;
+.rules-page,
+.games-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1.5rem 20px 4rem;
+  background-color: #87ceeb;
+  background-image: url("/images/bliss.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.easy-font,
-.easy-font * {
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif !important;
-  font-size: 24px !important;
-  letter-spacing: normal !important;
-  line-height: 1.5 !important;
-  word-spacing: normal !important;
+.rules-page .window,
+.games-page .window {
+  overflow-wrap: anywhere;
+}
+
+.rules-page .window-body,
+.games-page .window-body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.rules-page .title-bar-text,
+.games-page .title-bar-text {
+  font-size: 18px;
+}
+
+.rules-page .window-body h2,
+.games-page .window-body h2 {
+  font-size: 20px;
+}
+
+.rules-page [role="tabpanel"],
+.games-archive-page [role="tabpanel"] {
+  min-width: 0;
+}
+
+.rules-page [role="tabpanel"][hidden],
+.games-archive-page [role="tabpanel"][hidden] {
+  display: none;
+}
+
+.rules-page #site-footer.title-bar,
+.games-page #site-footer.title-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-top: 0;
+  color: #fff;
+}
+
+.rules-page #site-footer > span,
+.games-page #site-footer > span {
+  font-size: 16px;
+}
+
+.games-archive-page .tree-view {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.games-archive-page .tree-view li,
+.games-archive-page .tree-view a {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.game-detail-page .window-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.game-detail-page .window-body img {
+  height: auto;
+  max-width: 100%;
+}
+
+.game-detail-page .window-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.games-stats-page .rating-chart-panel {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 1rem;
+  border: 2px solid #808080;
+  background-color: #fff;
+  box-shadow: inset 1px 1px #000, inset -1px -1px #dfdfdf;
+}
+
+.games-stats-page .rating-chart {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.games-stats-page .rating-chart canvas {
+  max-width: 100%;
 }
 
 .snes-container s,
