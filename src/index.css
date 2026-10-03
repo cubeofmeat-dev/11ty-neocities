@@ -118,10 +118,6 @@ body.homepage {
   z-index: 10;
 }
 
-img.img-game {
-  max-width: 49%;
-}
-
 img.img-logo {
   width: 250px;
 }
@@ -157,12 +153,11 @@ img.img-logo {
     max-width: 100%;
   }
 
-  img.img-game {
-    max-width: 100%;
-  }
 }
 
-h3 {
+h3,
+.game-detail-page .window-body > h1 {
+  font-size: 1.17em;
   border-bottom: 2px solid currentColor;
   padding-bottom: 0.25rem;
 }
@@ -267,6 +262,10 @@ h3 {
   overflow-x: hidden;
 }
 
+.games-archive-page details > summary {
+  cursor: pointer;
+}
+
 .games-archive-page .tree-view li,
 .games-archive-page .tree-view a {
   min-width: 0;
@@ -282,6 +281,27 @@ h3 {
 .game-detail-page .window-body img {
   height: auto;
   max-width: 100%;
+}
+
+.game-detail-page .window-body p:has(> img.img-game) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.game-detail-page .window-body p:has(> img.img-game:last-child:nth-child(odd)) > img.img-game:last-child {
+  grid-column: 1 / -1;
+}
+
+.game-detail-page .window-body img.img-game {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 520px) {
+  .game-detail-page .window-body p:has(> img.img-game) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .game-detail-page .window-body table {
@@ -327,89 +347,20 @@ h3 {
   color: #f22561;
 }
 
-.review-card {
-  margin: 1.5rem 0 2rem;
-  border: 4px solid #000;
-  background: #fff;
-  box-shadow: 8px 8px 0 #000;
-}
-
-.review-card-head {
-  border-bottom: 4px solid #000;
-  padding: 0.75rem 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  background: repeating-linear-gradient(45deg,
-      #f6f6f6,
-      #f6f6f6 10px,
-      #ececec 10px,
-      #ececec 20px);
-}
-
-.review-card-title {
-  margin: 0;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.review-card-overall {
-  display: inline-block;
-  padding: 0.25rem 0.6rem;
-  border: 3px solid #000;
-  background: #fff39b;
-  font-weight: 700;
-}
-
-.review-card-table {
+.game-detail-page .window-body .review-card-table {
+  box-sizing: border-box;
+  display: inline-table;
   width: 100%;
   border-collapse: collapse;
 }
 
-.review-card-table thead th {
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.95rem;
-  border-bottom: 3px solid #000;
-  background: #f2f2f2;
+.game-detail-page .review-card-table th,
+.game-detail-page .review-card-table td {
+  border: 1px solid #808080;
+  padding: 0.5rem;
 }
 
-.review-card-table th,
-.review-card-table td {
-  padding: 0.6rem 1rem;
-  text-align: left;
-}
-
-.review-card-table tbody tr+tr td {
-  border-top: 1px dashed #000;
-}
-
-.review-card-table td:last-child,
-.review-card-table th:last-child {
-  width: 100px;
-  text-align: center;
-  font-weight: 700;
-}
-
-.review-card-table td:nth-child(2),
-.review-card-table th:nth-child(2) {
-  width: 120px;
-  text-align: center;
-  font-weight: 700;
-}
-
-.review-card-table tr.review-overall-row td {
-  border-top: 3px solid #000;
-  background: #f7f7d0;
-}
-
-@media (max-width: 720px) {
-
-  .review-card-table th,
-  .review-card-table td {
-    padding: 0.55rem 0.7rem;
-  }
+.game-detail-page .review-card-table thead th,
+.game-detail-page .review-card-table .review-overall-row td {
+  background-color: #d6d6d6;
 }

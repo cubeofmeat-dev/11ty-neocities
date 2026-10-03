@@ -80,12 +80,12 @@ module.exports = function (eleventyConfig) {
       .join("");
     const overallRow = `<tr class="review-overall-row"><td><strong>Overall</strong></td><td><strong>${overall || "?"}</strong></td></tr>`;
     return (
-      `<section class="review-card" aria-label="Review report card">` +
-      `<div class="review-card-head"><h4 class="review-card-title">Review Report Card</h4></div>` +
+      `<div aria-label="Review report card">` +
+      `<h3>Review Report Card</h3>` +
       `<table class="review-card-table">` +
       `<thead><tr><th>Category</th><th>Grade</th></tr></thead>` +
       `<tbody>${rows}${overallRow}</tbody>` +
-      `</table></section>`
+      `</table></div>`
     );
   }
 
@@ -116,10 +116,10 @@ module.exports = function (eleventyConfig) {
     }
 
     return (
-      `<section class="review-card" aria-label="Review report card">` +
-      `<div class="review-card-head"><h4 class="review-card-title">Review Report Card</h4></div>` +
+      `<div aria-label="Review report card">` +
+      `<h3>Review Report Card</h3>` +
       `<table class="review-card-table">${finalTableContent}</table>` +
-      `</section>`
+      `</div>`
     );
   }
 
