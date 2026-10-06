@@ -22,15 +22,7 @@
             {{ content | gameFormat: ratings, reportCard }}
         </div>
     </main>
-    <footer id="site-footer" class="title-bar">
-        <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>
-        <button class="footer-back-to-top" type="button" aria-label="Back to top"
-            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-            <svg aria-hidden="true" viewBox="0 0 16 16">
-                <path d="m3 10 5-5 5 5" />
-            </svg>
-        </button>
-    </footer>
+    {% include "site-footer.html", showBackToTop: true %}
 </body>
 
 </html>

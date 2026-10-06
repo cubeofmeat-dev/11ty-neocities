@@ -50,12 +50,21 @@ body.main-container::after {
 
 body.homepage {
   box-sizing: border-box;
+  padding-bottom: 6rem;
+}
+
+.homepage::before,
+.rules-page::before,
+.games-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-color: #87ceeb;
   background-image: url("/images/bliss.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 6rem;
 }
 
 .homepage .window-body {
@@ -63,8 +72,7 @@ body.homepage {
 }
 
 .homepage .window-body p,
-.homepage #home-navigation button,
-.homepage #site-footer > span {
+.homepage #home-navigation button {
   font-size: 16px;
 }
 
@@ -164,28 +172,154 @@ h3,
 
 #site-footer {
   margin-top: 3rem;
-  padding: 1rem 0;
-  border-top: 4px solid currentColor;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
   order: 2;
 }
 
-.game-detail-page .footer-back-to-top {
+/* ============================ TASKBAR FOOTER ============================ */
+#site-footer.taskbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: stretch;
+  height: 42px;
+  margin: 0;
+  background: linear-gradient(180deg, #4087f5 0%, #2b6fe0 8%, #2663d6 42%, #2a6ee2 88%, #1c4fb5 100%);
+  border-top: 1px solid #1d4fa8;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, .35) inset;
+  font-size: 12px;
+}
+
+.start-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px 0 13px;
+  border: none;
+  border-radius: 0 11px 11px 0;
+  background: linear-gradient(180deg, #5cb85c 0%, #3d9b3d 10%, #2f8a2f 45%, #237523 72%, #2f8f2f 100%);
+  color: #fff;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
+}
+
+.start-btn:hover {
+  filter: brightness(1.12);
+}
+
+.start-flag {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5px;
+  transform: rotate(-8deg);
+  flex-shrink: 0;
+}
+
+.start-flag i {
+  display: block;
+  border-radius: 1px;
+}
+
+.start-flag i:nth-child(1) {
+  background: #f04b4b;
+}
+
+.start-flag i:nth-child(2) {
+  background: #6fc96f;
+}
+
+.start-flag i:nth-child(3) {
+  background: #4b9ef0;
+}
+
+.start-flag i:nth-child(4) {
+  background: #f5c842;
+}
+
+.task-zone {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  min-width: 0;
+}
+
+.task-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 320px;
+  padding: 5px 13px;
+  background: linear-gradient(180deg, #4e95f7, #2f6fd8);
+  border: 1px solid #1b4ba8;
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .3);
+  color: #fff;
+  font-size: 11.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-btn .doc-ico {
+  flex-shrink: 0;
+}
+
+.tray {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  background: linear-gradient(180deg, #16a0e8 0%, #108ad6 38%, #1495e0 100%);
+  border-left: 1px solid #1a63c4;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, .25);
+  color: #fff;
+}
+
+.tray button {
+  min-width: 0;
+  padding: 2px 9px;
+  font-size: 13px;
+  line-height: 1.1;
+  font-family: Tahoma, sans-serif;
+  cursor: pointer;
+}
+
+.tray .clock {
+  font-size: 11.5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .35);
+}
+
+.help-btn {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0 !important;
+  font-weight: bold;
+}
+
+.footer-back-to-top {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 20px;
+  height: 20px;
   min-width: 0;
-  margin-left: auto;
-  padding: 0;
+  padding: 0 !important;
 }
 
-.game-detail-page .footer-back-to-top svg {
+.footer-back-to-top svg {
   width: 12px;
   height: 12px;
   fill: none;
@@ -195,18 +329,126 @@ h3,
   stroke-width: 2;
 }
 
-.homepage #site-footer.title-bar {
+/* ============================ START MENU ============================ */
+.start-menu {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  border-top: 0;
+  left: 3px;
+  bottom: 42px;
+  width: 280px;
+  max-width: calc(100vw - 10px);
+  background: #fff;
+  border: 1px solid #1b4ba8;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -6px 22px rgba(0, 0, 0, .42);
+  z-index: 1001;
+  overflow: hidden;
+  display: none;
+}
+
+.start-menu.open {
+  display: block;
+}
+
+.sm-header {
+  background: linear-gradient(180deg, #2b7bea, #1c57c0);
   color: #fff;
+  padding: 9px 13px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .45);
+  border-bottom: 2px solid #f5a623;
+}
+
+.sm-body {
+  background: #fff;
+  padding: 5px 0;
+}
+
+.sm-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 6px 13px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+  color: #1c1c1c;
+  text-decoration: none;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.sm-item:hover {
+  background: #2f6fd8;
+  color: #fff;
+}
+
+.sm-item .n {
+  color: #8a8a8a;
+  font-size: 10.5px;
+  min-width: 15px;
+}
+
+.sm-item:hover .n {
+  color: #cfe0ff;
+}
+
+.sm-footer {
+  background: linear-gradient(180deg, #2b7bea, #1c57c0);
+  padding: 6px 13px;
+  color: #fff;
+  font-size: 11px;
+  text-align: right;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+}
+
+/* ============================ HELP BALLOON ============================ */
+.help-balloon {
+  position: fixed;
+  right: 10px;
+  bottom: 42px;
+  width: 240px;
+  max-width: calc(100vw - 20px);
+  background: #fff;
+  border: 1px solid #1b4ba8;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -6px 22px rgba(0, 0, 0, .42);
+  z-index: 1001;
+  overflow: hidden;
+  display: none;
+}
+
+.help-balloon.open {
+  display: block;
+}
+
+.hb-header {
+  background: linear-gradient(180deg, #2b7bea, #1c57c0);
+  color: #fff;
+  padding: 7px 11px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 12.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .45);
+  border-bottom: 2px solid #f5a623;
+}
+
+.hb-body {
+  background: #fff;
+  padding: 10px 11px;
+  color: #1c1c1c;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.hb-body p {
+  margin: 0;
 }
 
 .rules-page,
@@ -217,11 +459,6 @@ h3,
   min-height: 100vh;
   margin: 0;
   padding: 1.5rem 20px 4rem;
-  background-color: #87ceeb;
-  background-image: url("/images/bliss.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .rules-page .window,
@@ -253,26 +490,6 @@ h3,
 .rules-page [role="tabpanel"][hidden],
 .games-archive-page [role="tabpanel"][hidden] {
   display: none;
-}
-
-.rules-page #site-footer.title-bar,
-.games-page #site-footer.title-bar {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  border-top: 0;
-  color: #fff;
-}
-
-.rules-page #site-footer > span,
-.games-page #site-footer > span {
-  font-size: 16px;
 }
 
 .games-archive-page .tree-view {
