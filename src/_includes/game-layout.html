@@ -22,9 +22,7 @@
             {{ content | gameFormat: ratings, reportCard }}
         </div>
     </main>
-    <footer id="site-footer" class="title-bar">
-        <span>© CubeOfMeat · Built with 11ty · Hosted on Neocities</span>
-    </footer>
+    {% include "site-footer.html", showBackToTop: true %}
 </body>
 
 </html>

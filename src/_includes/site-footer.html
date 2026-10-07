@@ -1,0 +1,99 @@
+<footer id="site-footer" class="taskbar">
+  <button class="start-btn" type="button" id="startBtn" aria-haspopup="true" aria-expanded="false"
+    aria-controls="startMenu">
+    <span class="start-flag"><i></i><i></i><i></i><i></i></span>
+    start
+  </button>
+  <div class="task-zone">
+    <div class="task-btn">
+      <svg class="doc-ico" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M2.5 1h7l4 4v10h-11z" fill="#fff" stroke="#9aa" stroke-width="1" />
+        <path d="M9.5 1v4h4" fill="#dde6f0" stroke="#9aa" stroke-width="1" />
+        <path d="M4.5 8h7M4.5 10.5h7M4.5 13h4.5" stroke="#5a8ac0" stroke-width="1" />
+      </svg>
+      <span>{{ title }}</span>
+    </div>
+  </div>
+  <div class="tray">
+    {% if showBackToTop %}
+    <button class="footer-back-to-top" type="button" aria-label="Back to top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <svg aria-hidden="true" viewBox="0 0 16 16">
+        <path d="m3 10 5-5 5 5" />
+      </svg>
+    </button>
+    {% endif %}
+    <button class="help-btn" type="button" id="helpBtn" aria-haspopup="true" aria-expanded="false"
+      aria-controls="helpBalloon">?</button>
+    <span class="clock" id="footerClock"></span>
+  </div>
+
+  <div class="start-menu" id="startMenu">
+    <div class="sm-header">CubeOfMeat &middot; Quick Links</div>
+    <div class="sm-body">
+      <a class="sm-item" href="/games"><span class="n">1</span> Games</a>
+      <a class="sm-item" href="https://cubeofmeat.atabook.org"><span class="n">2</span> Guests</a>
+      <a class="sm-item" href="https://github.com/cubeofmeat-dev"><span class="n">3</span> GitHub</a>
+      <a class="sm-item" href="https://discord.gg/kMaMrb3v7A"><span class="n">4</span> Discord</a>
+    </div>
+    <div class="sm-footer">Esc closes</div>
+  </div>
+
+  <div class="help-balloon" id="helpBalloon">
+    <div class="hb-header">About this site</div>
+    <div class="hb-body">
+      <p>&copy; CubeOfMeat &middot; Built with 11ty &middot; Hosted on Neocities</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    const startBtn = document.getElementById('startBtn');
+    const startMenu = document.getElementById('startMenu');
+    const helpBtn = document.getElementById('helpBtn');
+    const helpBalloon = document.getElementById('helpBalloon');
+    const pairs = [[startBtn, startMenu], [helpBtn, helpBalloon]];
+
+    function setOpen(btn, panel, open) {
+      panel.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    }
+
+    function closeAll(exceptPanel) {
+      pairs.forEach(([btn, panel]) => {
+        if (panel !== exceptPanel) setOpen(btn, panel, false);
+      });
+    }
+
+    function toggle(btn, panel) {
+      const opening = !panel.classList.contains('open');
+      closeAll(opening ? panel : null);
+      setOpen(btn, panel, opening);
+    }
+
+    startBtn.addEventListener('click', (e) => { e.stopPropagation(); toggle(startBtn, startMenu); });
+    helpBtn.addEventListener('click', (e) => { e.stopPropagation(); toggle(helpBtn, helpBalloon); });
+
+    document.addEventListener('click', (e) => {
+      pairs.forEach(([btn, panel]) => {
+        if (!panel.contains(e.target) && !btn.contains(e.target)) setOpen(btn, panel, false);
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAll(null);
+    });
+
+    function tick() {
+      const d = new Date();
+      let h = d.getHours();
+      const m = String(d.getMinutes()).padStart(2, '0');
+      const ap = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      document.getElementById('footerClock').textContent = h + ':' + m + ' ' + ap;
+    }
+    tick();
+    setInterval(tick, 10000);
+  })();
+</script>
