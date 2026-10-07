@@ -483,12 +483,14 @@ h3,
 }
 
 .rules-page [role="tabpanel"],
-.games-archive-page [role="tabpanel"] {
+.games-archive-page [role="tabpanel"],
+.games-stats-page [role="tabpanel"] {
   min-width: 0;
 }
 
 .rules-page [role="tabpanel"][hidden],
-.games-archive-page [role="tabpanel"][hidden] {
+.games-archive-page [role="tabpanel"][hidden],
+.games-stats-page [role="tabpanel"][hidden] {
   display: none;
 }
 
@@ -517,6 +519,12 @@ h3,
 }
 
 .game-detail-page .window-body img {
+  height: auto;
+  max-width: 100%;
+}
+
+.game-detail-page .window-body iframe {
+  aspect-ratio: 16 / 9;
   height: auto;
   max-width: 100%;
 }
@@ -560,8 +568,11 @@ h3,
 
 .games-stats-page .rating-chart {
   box-sizing: border-box;
+  position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 2 / 1;
 }
 
 .games-stats-page .rating-chart canvas {

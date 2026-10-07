@@ -10,13 +10,13 @@ monthKey: 2026-10
 playedDate: YYYY-MM-DD
 reportCard:
   - category: Story
-    grade: C
+    grade: B
   - category: Look & Feel
-    grade: C
+    grade: B+
   - category: Sound & Music
-    grade: C
+    grade: A
   - category: Fun Factor
-    grade: C
+    grade: A
 eleventyExcludeFromCollections: true
 ---
 

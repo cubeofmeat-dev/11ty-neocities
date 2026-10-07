@@ -11,6 +11,7 @@
           document.getElementById(candidate.getAttribute("aria-controls")).hidden = !selected;
         });
         if (moveFocus) tab.focus();
+        tablist.dispatchEvent(new CustomEvent("tabchange", { detail: { tab } }));
       }
 
       tabs.forEach((tab, index) => {
