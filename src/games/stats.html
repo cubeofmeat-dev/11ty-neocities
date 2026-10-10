@@ -15,12 +15,28 @@ eleventyExcludeFromCollections: true
   <div class="window-body">
     <article class="rating-chart-panel">
       <p>
-        All games plotted by month and grade. Hover a dot to see the game title.
+        Ratings by year and grade. Select a dot or hover over it to see the game title.
       </p>
 
-      <div class="rating-chart" style="position: relative; width: 100%; max-width: 900px; margin: 0 auto">
-        <canvas id="ratingChart"></canvas>
-      </div>
+      {% assign postsByYear = collections.gameMonths | group_by: "data.year" | sort: "name" | reverse %}
+      {% assign latestYear = postsByYear | map: "name" | sort | last %}
+      <menu role="tablist" aria-label="Rating chart years">
+        {% for eachYear in postsByYear %}
+        <button id="stats-tab-{{ eachYear.name }}" type="button" role="tab"
+          aria-selected="{% if eachYear.name == latestYear %}true{% else %}false{% endif %}"
+          aria-controls="stats-panel-{{ eachYear.name }}"
+          tabindex="{% if eachYear.name == latestYear %}0{% else %}-1{% endif %}"
+          data-year="{{ eachYear.name }}">{{ eachYear.name }}</button>
+        {% endfor %}
+      </menu>
+
+      {% for eachYear in postsByYear %}
+      <section id="stats-panel-{{ eachYear.name }}" role="tabpanel"
+        aria-labelledby="stats-tab-{{ eachYear.name }}" tabindex="0"
+        {% unless eachYear.name == latestYear %}hidden{% endunless %}>
+        <div class="rating-chart"></div>
+      </section>
+      {% endfor %}
     </article>
   </div>
 </main>
@@ -89,97 +105,135 @@ eleventyExcludeFromCollections: true
   ];
 
   {% assign sortedPosts = collections.gameMonths | sort: "fileSlug" %}
+  const months = [
+    {%- for post in sortedPosts -%}
+    {%- assign monthLabel = post.data.month | append: "/" | append: post.data.year -%}
+    { year: "{{ post.data.year }}", label: {{ monthLabel | json }} },
+    {%- endfor -%}
+  ];
+
   {% assign monthIndex = 0 %}
   const games = [
     {%- for post in sortedPosts -%}
   {%- assign monthNumber = post.data.month | prepend: "0" | slice: -2, 2 -%}
   {%- assign monthKey = post.data.year | append: "-" | append: monthNumber -%}
+  {%- assign monthLabel = post.data.month | append: "/" | append: post.data.year -%}
   {%- assign monthRatings = collections.gameRatings | where: "monthKey", monthKey -%}
   {%- for entry in monthRatings -%}
-  { x: {{ monthIndex }}, game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: "{{ post.data.month }}/{{ post.data.year }}" },
+  { x: {{ monthIndex }}, year: "{{ post.data.year }}", game: {{ entry.game | json }}, grade: {{ entry.grade | json }}, month: {{ monthLabel | json }} },
   {%- endfor -%}
   {%- assign monthIndex = monthIndex | plus: 1 -%}
   {%- endfor -%}
   ];
 
-  {%- assign sortedPosts = collections.gameMonths | sort: "fileSlug" -%}
-  const monthLabels = [
-    {%- for post in sortedPosts -%}
-  "{{ post.data.month }}/{{ post.data.year }}",
-    {%- endfor -%}
-  ];
+  const getChartData = (year) => {
+    const visibleMonths = months
+      .map((month, index) => ({ ...month, index }))
+      .filter((month) => month.year === year);
+    const monthIndexes = new Map(
+      visibleMonths.map((month, index) => [month.index, index]),
+    );
+    const monthLabels = visibleMonths.map((month) => month.label);
+    const visibleGames = games.filter((game) => game.year === year);
+    const groupCounts = {};
+    visibleGames.forEach((game) => {
+      const monthIndex = monthIndexes.get(game.x);
+      const key = `${monthIndex}-${game.grade}`;
+      groupCounts[key] = (groupCounts[key] || 0) + 1;
+    });
+    const jitterMap = {};
+    const dataPoints = visibleGames.map((game) => {
+        const monthIndex = monthIndexes.get(game.x);
+        const key = `${monthIndex}-${game.grade}`;
+        jitterMap[key] = (jitterMap[key] || 0) + 1;
+        const slot = jitterMap[key] - 1;
+        return {
+          x:
+            monthIndex +
+            (slot - (groupCounts[key] - 1) / 2) * 0.18,
+          y: GRADE_Y[game.grade],
+          label: game.game,
+          grade: game.grade,
+          month: game.month,
+        };
+      });
 
-  // jitter dots that share the same month+grade so they don't stack
-  const jitterMap = {};
-  const dataPoints = games.map((g) => {
-    const key = `${g.x}-${g.grade}`;
-    jitterMap[key] = (jitterMap[key] || 0) + 1;
-    const slot = jitterMap[key] - 1;
     return {
-      x: g.x + slot * 0.18,
-      y: GRADE_Y[g.grade],
-      label: g.game,
-      grade: g.grade,
-      month: g.month,
+      monthLabels,
+      dataPoints,
+      dotColors: dataPoints.map(
+        (point) => SNES_COLORS[Math.floor(point.x) % SNES_COLORS.length],
+      ),
     };
-  });
+  };
 
-  // color each dot by month bucket
-  const dotColors = dataPoints.map(
-    (p) => SNES_COLORS[Math.floor(p.x) % SNES_COLORS.length],
-  );
+  const tablist = document.querySelector('.games-stats-page [role="tablist"]');
+  const selectedTab = tablist.querySelector('[role="tab"][aria-selected="true"]');
+  const canvas = document.createElement("canvas");
+  canvas.id = "ratingChart";
+  const createChart = (tab) => {
+    const panel = document.getElementById(tab.getAttribute("aria-controls"));
+    const chartData = getChartData(tab.dataset.year);
+    panel.querySelector(".rating-chart").appendChild(canvas);
 
-  const ctx = document.getElementById("ratingChart").getContext("2d");
-  new Chart(ctx, {
-    type: "scatter",
-    data: {
-      datasets: [
-        {
-          label: "Games",
-          data: dataPoints,
-          backgroundColor: dotColors,
-          borderColor: dotColors,
-          pointRadius: 8,
-          pointHoverRadius: 11,
+    return new Chart(canvas.getContext("2d"), {
+      type: "scatter",
+      data: {
+        datasets: [
+          {
+            label: "Games",
+            data: chartData.dataPoints,
+            backgroundColor: chartData.dotColors,
+            borderColor: chartData.dotColors,
+            pointRadius: 8,
+            pointHoverRadius: 11,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw.label} — ${ctx.raw.grade}`,
+            },
+          },
         },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: (ctx) => `${ctx.raw.label} — ${ctx.raw.grade}`,
+        scales: {
+          x: {
+            type: "linear",
+            min: -0.5,
+            max: chartData.monthLabels.length - 0.5,
+            ticks: {
+              stepSize: 1,
+              callback: (val) => chartData.monthLabels[Math.round(val)] ?? "",
+              color: "#333",
+              maxRotation: 45,
+              minRotation: 30,
+            },
+            grid: { color: "rgba(0,0,0,0.08)" },
+          },
+          y: {
+            type: "linear",
+            min: -0.5,
+            max: GRADE_LABELS.length - 0.5,
+            ticks: {
+              stepSize: 1,
+              callback: (val) => GRADE_LABELS[Math.round(val)] ?? "",
+              color: "#333",
+            },
+            grid: { color: "rgba(0,0,0,0.08)" },
           },
         },
       },
-      scales: {
-        x: {
-          type: "linear",
-          min: -0.5,
-          max: monthLabels.length - 0.5,
-          ticks: {
-            stepSize: 1,
-            callback: (val) => monthLabels[Math.round(val)] ?? "",
-            color: "#333",
-            maxRotation: 45,
-            minRotation: 30,
-          },
-          grid: { color: "rgba(0,0,0,0.08)" },
-        },
-        y: {
-          type: "linear",
-          min: -0.5,
-          max: GRADE_LABELS.length - 0.5,
-          ticks: {
-            stepSize: 1,
-            callback: (val) => GRADE_LABELS[Math.round(val)] ?? "",
-            color: "#333",
-          },
-          grid: { color: "rgba(0,0,0,0.08)" },
-        },
-      },
-    },
+    });
+  };
+
+  let chart = createChart(selectedTab);
+  tablist.addEventListener("tabchange", (event) => {
+    const { tab } = event.detail;
+    chart.destroy();
+    chart = createChart(tab);
   });
 </script>

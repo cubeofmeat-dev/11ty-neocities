@@ -16,7 +16,7 @@ reportCard:
   - category: Sound & Music
     grade: B-
   - category: Fun Factor
-    grade: B
+    grade: B-
 ---
 
 # Shantae: Risky's Revenge
