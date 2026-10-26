@@ -7,16 +7,16 @@ year: 2026
 month: 10
 monthText: October
 monthKey: 2026-10
-playedDate: YYYY-MM-DD
+playedDate: 2026-10-26
 reportCard:
   - category: Story
-    grade: C
+    grade: A
   - category: Look & Feel
-    grade: C
+    grade: B+
   - category: Sound & Music
-    grade: C
+    grade: B
   - category: Fun Factor
-    grade: C
+    grade: B+
 eleventyExcludeFromCollections: true
 ---
 
