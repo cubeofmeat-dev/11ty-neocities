@@ -17,7 +17,6 @@ reportCard:
     grade: B
   - category: Fun Factor
     grade: B+
-eleventyExcludeFromCollections: true
 ---
 
 # Call of Juarez: Gunslinger
