@@ -27,7 +27,7 @@ _October 17, 2026_
 		<img class="img-logo snes-container no-padding" src="/images/shantae-hgh-logo.png">
 </p>
 
-_Quote Placeholder_
+_Now step aside, or suffer the might of my Part Omni-Organic, Partially Titanic, Ocean-Optional Tinkerslug! P.O.O.P.T.O.O.T.? DON'T CALL IT THAT!_
 
 ### First Impression
 
