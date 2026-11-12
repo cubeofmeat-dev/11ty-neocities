@@ -29,15 +29,6 @@ _October 17, 2026_
 
 _Now step aside, or suffer the might of my Part Omni-Organic, Partially Titanic, Ocean-Optional Tinkerslug! P.O.O.P.T.O.O.T.? DON'T CALL IT THAT!_
 
-Shantae: Half-Genie Hero
-
-Story: C
-Look & Feel: C+
-Sound & Music: B-
-Fun Factor: C+
-
-_Now step aside, or suffer the might of my Part Omni-Organic, Partially Titanic, Ocean-Optional Tinkerslug! P.O.O.P.T.O.O.T.? DON'T CALL IT THAT!_
-
 ### First Impression
 
 I was really riding the high coming off of Pirates curse. What a great Metroidvania. I was really happy with the game play, the loop of discovering items and taking them back to older areas, finding new ways through what you previously thought was closed off. There were cool new set pieces that you get to experience, and everything just flowed so well together. 
